@@ -325,6 +325,7 @@ function saveChangesToLocalstorage(key, item) {
     data: item.querySelector(".form-row__content-desc").textContent,
     amount: item.querySelector("input[name=amount]").value,
     imgUrl: item.querySelector("img").src,
+    itemUrl: item.querySelector(".form-row__content-title").getAttribute("href"),
     pricePerItem: item.querySelector("input[name=pricePerItem]").value,
     key: key,
   };
