@@ -202,18 +202,6 @@ if (document.querySelector("main.order")) {
           countTotalSum();
           saveChangesToLocalstorage(localStorageKey, item);
           updateCartBadge();
-          if (amountValue == 0) {
-            const deleteModal = document.getElementById("confirmDeleteItem");
-            deleteModal.showModal();
-
-            const deleteFromModal = document.getElementById("deleteFromModal");
-            deleteFromModal.onclick = function () {
-              let localStorageKey = item.querySelector("input[name=itemKey]").value;
-              deleteItem(localStorageKey);
-              updateCartBadge();
-              deleteModal.close();
-            };
-          }
         });
       });
     });
