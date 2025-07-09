@@ -43,8 +43,8 @@ Template Name: Оформление заказа
     <p class="dialog__content">Удалить выбранный товар?</p>
 
     <form class="dialog__controls" method="dialog">
-        <button id="deleteFromModal" type="submit" value="deleteThisItem" class="dialog__button button button--red">Удалить</button>
-        <button type="submit" class="dialog__button button button--outline">Оставить</button>
+        <button id="confirmDeleteFromModal" type="submit" value="deleteThisItem" class="dialog__button button button--red">Удалить</button>
+        <button id="cancelDeleteFromModal" type="submit" class="dialog__button button button--outline">Оставить</button>
     </form>
 </dialog>
 
