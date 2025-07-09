@@ -127,6 +127,7 @@ if (document.getElementById("addToOrder")) {
             itemUrl: itemUrl,
             pricePerItem: pricePerItem,
             key: "order_" + type + "_" + itemId,
+            timestamp: Date.now(),
           });
         }
       }
@@ -258,16 +259,25 @@ if (document.querySelector("main.order")) {
   });
 }
 
+const CART_LIFETIME = 7 * 24 * 60 * 60 * 1000; // 7 дней в миллисекундах
+
 const CartStorage = {
   getAll() {
     const result = [];
+    const now = Date.now();
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key && key.startsWith("order_")) {
         const value = localStorage.getItem(key);
         if (value) {
           try {
-            JSON.parse(value).forEach((item) => result.push(item));
+            const items = JSON.parse(value);
+            // Проверка срока жизни
+            if (items[0] && items[0].timestamp && now - items[0].timestamp > CART_LIFETIME) {
+              localStorage.removeItem(key);
+              continue;
+            }
+            items.forEach((item) => result.push(item));
           } catch (e) {
             // ignore broken data
           }
@@ -281,7 +291,13 @@ const CartStorage = {
     const value = localStorage.getItem(key);
     if (!value) return null;
     try {
-      return JSON.parse(value);
+      const items = JSON.parse(value);
+      const now = Date.now();
+      if (items[0] && items[0].timestamp && now - items[0].timestamp > CART_LIFETIME) {
+        localStorage.removeItem(key);
+        return null;
+      }
+      return items;
     } catch (e) {
       return null;
     }
@@ -329,6 +345,7 @@ function saveChangesToLocalstorage(key, item) {
     itemUrl: item.querySelector(".form-row__content-title").getAttribute("href"),
     pricePerItem: item.querySelector("input[name=pricePerItem]").value,
     key: key,
+    timestamp: Date.now(),
   };
   CartStorage.set(key, orderItem);
 }
