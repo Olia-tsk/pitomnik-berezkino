@@ -206,6 +206,22 @@ if (document.querySelector("main.order")) {
       }
     };
 
+    jQuery(document)
+      .off("click", "#deleteItem")
+      .on("click", "#deleteItem", function (e) {
+        e.preventDefault();
+        const deleteModal = document.getElementById("confirmDeleteItem");
+        deleteModal.showModal();
+
+        const deleteFromModal = document.getElementById("confirmDeleteFromModal");
+        deleteFromModal.onclick = function () {
+          let localStorageKey = e.currentTarget.querySelector("input").value;
+          deleteItem(localStorageKey);
+          updateCartBadge();
+          deleteModal.close();
+        };
+      });
+
     items.forEach((item) => {
       let valueBtns = item.querySelectorAll(".form-group__btn");
       let amount = item.querySelector("input[name=amount]");
