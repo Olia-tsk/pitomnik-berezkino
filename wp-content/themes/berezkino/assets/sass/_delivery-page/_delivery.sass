@@ -1,0 +1,29 @@
+.delivery
+  &__content
+    padding: 24px
+    background: #FFFFFF
+    border: 1px solid #ECECEC
+    border-radius: 24px
+    &:not(:last-child)
+      margin-bottom: 35px
+    & ul
+      list-style: disc
+      padding-left: 25px
+    & p, & a, & li
+      font-size: 20px
+      line-height: 28px
+      color: #1E1E1E
+    & p:not(:last-child), & li:not(:last-child)
+      margin-bottom: 15px
+    & p + ul > li:not(:last-child)
+      margin-bottom: 5px
+    & a
+      color: $base-color
+
+  &__content-title
+    margin: 0
+    margin-bottom: 24px
+    font-weight: 700
+    font-size: 32px
+    line-height: 38px
+    color: #1E1E1E

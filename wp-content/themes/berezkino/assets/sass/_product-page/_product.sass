@@ -1,0 +1,108 @@
+.product
+  &__breadcrumps
+    margin-bottom: 35px
+
+.product-item
+  padding: 32px
+  display: flex
+  column-gap: 60px
+  background-color: #FFFFFF
+  border: 1px solid #ECECEC
+  box-shadow: $box-shadow-xsmall
+  border-radius: 24px
+  &__content
+    width: 50%
+    flex-grow: 1
+  &__header
+    margin-bottom: 24px
+    display: flex
+    flex-direction: column
+    row-gap: 3px
+  &__subtitle
+    font-weight: 600
+    font-size: 16px
+    line-height: 19px
+    color: $base-color
+  &__title
+    margin: 0
+    font-family: 'Comfortaa'
+    font-weight: 700
+    font-size: 32px
+    line-height: 48px
+    color: #1E1E1E
+  &__latin
+    font-weight: 600
+    font-size: 16px
+    line-height: 19px
+    color: #1E1E1E
+  &__description
+    margin-bottom: 24px
+    & p
+      font-size: 16px
+      line-height: 24px
+      color: #1E1E1E
+      & > span
+        font-size: inherit
+        line-height: inherit
+        color: inherit
+        font-weight: 500
+    & ul
+      list-style: disc
+      padding-left: 20px
+      & > li
+        &:not(:last-child)
+          margin-bottom: 5px
+    & ol
+      & > li
+        &:not(:last-child)
+          margin-bottom: 5px
+  &__variants
+    padding-left: 15px
+    display: flex
+    flex-direction: column
+    row-gap: 10px
+    list-style: disc
+    overflow-x: auto
+    & li
+      font-size: 16px
+      line-height: 24px
+      color: #1e1e1e
+      & > span
+        white-space: nowrap
+      & b
+        font-weight: 600
+  &__variants-title
+    margin: 0
+    margin-bottom: 10px
+    font-size: 16px
+    font-weight: 600
+  &__price
+    margin-bottom: 37px
+    font-weight: 700
+    font-size: 24px
+    line-height: 29px
+    color: #1E1E1E
+  &__form
+    display: flex
+    flex-direction: column
+    column-gap: 30px
+    row-gap: 25px
+  &__button
+    height: 50px
+    width: 45%
+    max-width: 250px
+    min-width: 211px
+    flex-grow: 1
+  &__image
+    position: relative
+    width: 45%
+    max-height: 650px
+    min-height: 300px
+    border-radius: 24px
+    overflow: hidden
+    & > img
+      position: absolute
+      height: 100%
+      width: 100%
+      object-fit: cover
+      object-position: center

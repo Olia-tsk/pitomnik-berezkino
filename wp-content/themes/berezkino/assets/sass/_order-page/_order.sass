@@ -1,0 +1,68 @@
+.order
+  &__header
+    margin-bottom: 25px
+    align-items: flex-start
+  &__form
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    column-gap: 16px
+    & input[type="number"]
+      width: 80px
+      border-radius: 8px
+  &__form-wrapper
+    width: 50%
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    row-gap: 10px
+  &__form-row
+    column-gap: 12px
+    align-items: stretch
+    flex-wrap: nowrap
+    position: unset
+    padding: 24px
+    background: #ffffff
+    border: 1px solid #ececec
+    box-shadow: $box-shadow-xsmall
+    border-radius: 20px
+    & > img
+      flex-shrink: 0
+      width: 88px
+      height: 88px
+      object-fit: cover
+      border-radius: 12px
+  &__submit
+    display: flex
+    flex-direction: column
+    min-height: 400px
+    width: 35%
+    max-width: 510px
+    padding: 24px
+    background: #ffffff
+    border: 1px solid #ececec
+    box-shadow: $box-shadow-xsmall
+    border-radius: 20px
+    & > p
+      margin-bottom: 8px
+      font-size: 16px
+      line-height: 19px
+      color: #949494
+  &__submit-wrapper
+    display: flex
+    flex-direction: column
+    row-gap: 8px
+    justify-content: space-between
+    column-gap: 35px
+  &__submit-items
+    font-weight: 700
+    font-size: 20px
+    line-height: 24px
+    color: #1e1e1e
+  &__submit-summ
+    font-weight: 700
+    font-size: 24px
+    line-height: 29px
+    color: #1e1e1e
+  &__button
+    margin-top: auto

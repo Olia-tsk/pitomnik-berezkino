@@ -1,0 +1,579 @@
+@media (max-width: 1690px)
+  .container
+    max-width: unset
+    width: 92%
+
+@media (max-width: 1440px)
+  .section-header
+    margin-bottom: calc(25px + (55 - 25) * ((100vw - 375px) / (1440 - 375)))
+    &__title
+      font-size: calc(32px + (56 - 32) * ((100vw - 375px) / (1440 - 375)))
+      line-height: calc(36px + (52 - 36) * ((100vw - 375px) / (1440 - 375)))
+    &__subtitle
+      font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1440 - 375)))
+      line-height: calc(19px + (29 - 19) * ((100vw - 375px) / (1440 - 375)))
+  .page-header
+    margin-bottom: calc(40px + (80 - 25) * ((100vw - 375px) / (1440 - 375)))
+    &__title
+      font-size: calc(32px + (40 - 32) * ((100vw - 375px) / (1440 - 375)))
+      line-height: calc(38px + (48 - 38) * ((100vw - 375px) / (1440 - 375)))
+  .reviews
+    &__slider-slide
+      & > p
+        font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (1440 - 375)))
+        line-height: calc(22px + (28 - 22) * ((100vw - 375px) / (1440 - 375)))
+  .about
+    &__content
+      padding: 40px calc(24px + (56 - 24) * ((100vw - 375px) / (1440 - 375)))
+    &__text
+      font-size: calc(16px + (23 - 20) * ((100vw - 375px) / (1440 - 375)))
+      line-height: calc(27px + (34 - 30) * ((100vw - 375px) / (1440 - 375)))
+      &:last-of-type
+        margin-bottom: calc(30px + (50 - 30) * ((100vw - 375px) / (1440 - 375)))
+  .contacts
+    &__content
+      width: 40%
+      flex-grow: 1
+    &__map
+      width: 55%
+      flex-grow: 1
+  .price
+    &__item-title
+      font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1440 - 375)))
+      line-height: calc(22px + (34 - 22) * ((100vw - 375px) / (1440 - 375)))
+    &__item-col
+      & > span
+        font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1440 - 375)))
+    &__item-download
+      font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1440 - 375)))
+  .useful-links
+    &__content
+      & > p
+        font-size: calc(16px + (18 - 16) * ((100vw - 375px) / (1440 - 375)))
+    &__link
+      column-gap: calc(15px + (24 - 15) * ((100vw - 375px) / (1440 - 375)))
+      & > svg
+        width: calc(35px + (48 - 35) * ((100vw - 375px) / (1440 - 375)))
+        height: calc(35px + (48 - 35) * ((100vw - 375px) / (1440 - 375)))
+  .product-item
+    padding: calc(16px + (32 - 16) * ((100vw - 375px) / (1440 - 375)))
+  .legend
+    & details
+      & > summary
+        font-size: calc(16px + (18 - 16) * ((100vw - 375px) / (1440 - 375)))
+      & ul li
+        font-size: calc(13px + (16 - 13) * ((100vw - 375px) / (1440 - 375)))
+  .order
+    &__header
+      margin-bottom: 25px
+  .not-found
+    &__title
+      font-size: calc(130px + (210 - 130) * ((100vw - 375px) / (1440 - 375)))
+    &__subtitle
+      font-size: calc(22px + (24 - 22) * ((100vw - 375px) / (1440 - 375)))
+
+@media (max-width: 1330px)
+  .header
+    top: -50px
+  .header-top
+    & .container
+      flex-wrap: wrap
+      row-gap: 24px
+      justify-content: center
+    &__announce
+      width: 100%
+      order: 1
+      text-align: center
+
+@media (max-width: 1250px)
+  section
+    padding-bottom: calc(85px + (160 - 85) * ((100vw - 375px) / (1250 - 375)))
+  main
+    padding-top: calc(35px + (65 - 35) * ((100vw - 375px) / (1250 - 375)))
+    &.delivery
+      padding-bottom: calc(35px + (110 - 35) * ((100vw - 375px) / (1250 - 375)))
+  .header-main
+    & .container
+      column-gap: 40px
+    &__menu
+      row-gap: 10px
+      flex-wrap: wrap
+      column-gap: 35px
+  .cover
+    &__title
+      font-size: calc(32px + (64 - 32) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(45px + (64 - 45) * ((100vw - 375px) / (1250 - 375)))
+    &__subtitle
+      font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(20px + (32 - 20) * ((100vw - 375px) / (1250 - 375)))
+  .advantages
+    &__wrapper
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: min-content repeat(3, 1fr)
+      grid-auto-flow: unset
+      column-gap: 16px
+    &__bg
+      position: unset
+      transform: unset
+      z-index: unset
+      grid-column: span 2
+      justify-self: center
+      width: calc(343px + (416 - 343) * ((100vw - 375px) / (1250 - 375)))
+    &__item
+      padding: calc(24px + (36 - 24) * ((100vw - 375px) / (1250 - 375)))
+      & > span
+        font-size: calc(24px + (36 - 24) * ((100vw - 375px) / (1250 - 375)))
+        line-height: calc(24px + (50 - 24) * ((100vw - 375px) / (1250 - 375)))
+      & > p
+        font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (1250 - 375)))
+        line-height: calc(24px + (30 - 24) * ((100vw - 375px) / (1250 - 375)))
+  .reviews
+    &__slider
+      padding:
+        left: 0
+        right: 0
+      display: flex
+      flex-direction: column-reverse
+      row-gap: 10px
+  .articles
+    &__slider
+      padding:
+        left: 0
+        right: 0
+      display: flex
+      flex-direction: column-reverse
+      row-gap: 10px
+  .articles-list
+    &__img
+      height: calc(170px + (200 - 170) * ((100vw - 375px) / (1250 - 375)))
+    &__link
+      > h4
+        font-size: calc(18px + (24 - 18) * ((100vw - 375px) / (1250 - 375)))
+        line-height: calc(22px + (34 - 22) * ((100vw - 375px) / (1250 - 375)))
+      > p
+        margin-bottom: calc(24px + (40 - 24) * ((100vw - 375px) / (1250 - 375)))
+        font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1250 - 375)))
+        line-height: calc(20px + (24 - 20) * ((100vw - 375px) / (1250 - 375)))
+  .splide__arrows
+    display: flex
+    justify-content: center
+    column-gap: 24px
+  .splide__arrow
+    position: unset
+    top: unset
+    transform: unset
+    width: calc(45px + (56 - 45) * ((100vw - 375px) / (1250 - 375)))
+    height: calc(45px + (56 - 45) * ((100vw - 375px) / (1250 - 375)))
+  .contacts
+    &__wrapper
+      padding: calc(24px + (32 - 24) * ((100vw - 375px) / (1250 - 375))) calc(24px + (32 - 24) * ((100vw - 375px) / (1250 - 375)))
+    &__content
+      row-gap: calc(29px + (36 - 29) * ((100vw - 375px) / (1250 - 375)))
+    &__title
+      font-size: calc(32px + (40 - 32) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(34px + (48 - 34) * ((100vw - 375px) / (1250 - 375)))
+    &__data
+      & a[href*="tel:"]
+        font-size: calc(22px + (40 - 22) * ((100vw - 375px) / (1250 - 375)))
+        line-height: calc(22px + (48 - 22) * ((100vw - 375px) / (1250 - 375)))
+  .price
+    &__item
+      padding: calc(16px + (32 - 16) * ((100vw - 375px) / (1250 - 375)))
+  .history
+    &__content-text > p
+      font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(26px + (28 - 26) * ((100vw - 375px) / (1250 - 375)))
+  .product-item
+    &__subtitle
+      font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1250 - 375)))
+    &__title
+      font-size: calc(26px + (32 - 26) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(32px + (48 - 32) * ((100vw - 375px) / (1250 - 375)))
+    &__latin
+      font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1250 - 375)))
+    &__description
+      & p
+        font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1250 - 375)))
+    &__variants
+      & li
+        font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1250 - 375)))
+    &__image
+      width: 50%
+  .categories-page.categories
+    & .categories
+      &__wrapper
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
+        grid-template-rows: auto
+      &__item
+        width: 100%
+        &:first-child
+          grid-row: unset
+          grid-column: unset
+  .subcategories
+    &__item
+      height: calc(220px + (360 - 220) * ((100vw - 375px) / (1250 - 375)))
+      & span
+        font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (1250 - 375)))
+  .delivery
+    &__content
+      & p, & a, & li
+        font-size: calc(14px + (20 - 14) * ((100vw - 375px) / (1250 - 375)))
+        line-height: calc(18px + (28 - 18) * ((100vw - 375px) / (1250 - 375)))
+      & ul
+        padding-left: calc(20px + (25 - 20) * ((100vw - 375px) / (1250 - 375)))
+    &__content-title
+      margin-bottom: calc(15px + (24 - 15) * ((100vw - 375px) / (1250 - 375)))
+      font-size: calc(20px + (32 - 20) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(24px + (38 - 24) * ((100vw - 375px) / (1250 - 375)))
+  .article
+    &__image
+      margin-bottom: calc(25px + (55 - 25) * ((100vw - 375px) / (1250 - 375)))
+    &__title
+      font-size: calc(22px + (40 - 22) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(26px + (48 - 26) * ((100vw - 375px) / (1250 - 375)))
+    &__content
+      margin-bottom: calc(65px + (85 - 65) * ((100vw - 375px) / (1250 - 375)))
+      & p, & p em, & p strong, & p a, & li
+        font-size: calc(14px + (20 - 14) * ((100vw - 375px) / (1250 - 375)))
+        line-height: calc(22px + (30 - 22) * ((100vw - 375px) / (1250 - 375)))
+      & p:not(:last-child)
+        margin-bottom: calc(15px + (20 - 15) * ((100vw - 375px) / (1250 - 375)))
+    &__others
+      padding: 25px 20px 30px
+    &__others-title
+      margin-bottom: calc(20px + (36 - 20) * ((100vw - 375px) / (1250 - 375)))
+      font-size: calc(22px + (40 - 22) * ((100vw - 375px) / (1250 - 375)))
+      line-height: calc(28px + (48 - 28) * ((100vw - 375px) / (1250 - 375)))
+  .footer-main
+    &__column
+      & > a, & > p
+        font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1250 - 375)))
+
+@media (max-width: 1024px)
+  .cover
+    &__content
+      width: calc(340px + (500 - 340) * ((100vw - 375px) / (1024 - 375)))
+      height: calc(340px + (500 - 340) * ((100vw - 375px) / (1024 - 375)))
+  .categories
+    &__wrapper
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: repeat(3, minmax(288px, 1fr))
+
+@media (max-width: 992px)
+  .header
+    top: -90px
+  .price
+    &__item
+      flex-direction: column
+  .history
+    &__content
+      flex-direction: column
+      row-gap: calc(45px + (64 - 45) * ((100vw - 375px) / (992 - 375)))
+      &:not(:last-child)
+        margin-bottom: calc(45px + (64 - 45) * ((100vw - 375px) / (992 - 375)))
+      & > img
+        height: calc(250px + (300 - 250) * ((100vw - 375px) / (992 - 375)))
+      &--gallery
+        flex-direction: row
+      &--invert
+        flex-direction: column
+    &__content-text
+      width: 100%
+      padding: 0 32px
+    &__content-images
+      width: 100%
+      & > img
+        height: calc(250px + (350 - 250) * ((100vw - 375px) / (992 - 375)))
+  .product-item
+    &__content
+      width: 45%
+  .footer-main
+    &__wrapper
+      flex-wrap: wrap
+      row-gap: 15px
+      justify-content: flex-end
+    &__column:first-child
+      width: 100%
+
+@media (max-width: 876px)
+  *
+    scroll-margin-top: 120px
+  .header
+    top: 0
+    box-shadow: none
+  .header-main
+    box-shadow: $box-shadow-xsmall
+    &__menu
+      display: none
+    &__announce
+      display: flex
+      flex-grow: 1
+      width: 100%
+  .header-top
+    display: none
+  .burger-menu
+    display: flex
+  .cover
+    &__wrapper
+      flex-direction: column
+      row-gap: 16px
+    &__image
+      width: 100%
+      height: calc(240px + (320 - 240) * ((100vw - 375px) / (876 - 375)))
+  .advantages
+    &__item
+      flex-direction: column
+      align-items: flex-start
+      row-gap: 10px
+  .categories
+    &__item
+      &:first-child
+        grid-row: unset
+        grid-column: span 2
+      &--fruit-berry-crops
+        & > img
+          width: 50%
+  .about
+    &__wrapper
+      flex-direction: column-reverse
+      row-gap: 24px
+    &__content
+      width: 100%
+    &__image
+      position: unset
+      width: 100%
+      max-height: 400px
+      min-height: 320px
+      height: unset
+  .contacts
+    &__wrapper
+      flex-direction: column
+      row-gap: 24px
+    &__content
+      padding: 0
+      width: 100%
+    &__map
+      width: 100%
+      height: 400px
+  .useful-links
+    &__link
+      flex-direction: column
+      align-items: flex-start
+      row-gap: 5px
+  .product-item
+    flex-direction: column-reverse
+    row-gap: 24px
+    &__content
+      width: 100%
+    &__image
+      position: unset
+      width: 100%
+      height: calc(185px + (400 - 185) * ((100vw - 375px) / (876 - 375)))
+      min-height: 250px
+      & > img
+        position: unset
+  .sidebar
+    display: none
+  .footer
+    & .logo-link
+      height: calc(65px + (85 - 65) * ((100vw - 375px) / (876 - 375)))
+  .footer-main
+    align-items: flex-start
+  .order
+    &__form
+      flex-direction: column
+      row-gap: 10px
+    &__form-wrapper
+      width: 100%
+    &__form-row
+      & > img
+        width: calc(55px + (88 - 55) * ((100vw - 375px) / (876 - 375)))
+        height: calc(55px + (88 - 55) * ((100vw - 375px) / (876 - 375)))
+    &__submit
+      width: 100%
+      max-width: unset
+      min-height: unset
+    &__submit-wrapper
+      margin-bottom: 8px
+    &__button
+      max-width: unset
+
+@media (max-width: 735px)
+  .header-main
+    & .container
+      column-gap: calc(30px + (40 - 30) * ((100vw - 375px) / (735 - 375)))
+    &__buttons
+      column-gap: calc(30px + (40 - 30) * ((100vw - 375px) / (735 - 375)))
+  .footer-main
+    column-gap: calc(45px + 15 * (100vw - 576px) / 159)
+    &__wrapper
+      flex-direction: column
+      align-items: flex-end
+
+@media (max-width: 683px)
+  .advantages
+    &__wrapper
+      grid-template-columns: 1fr
+      grid-template-rows: min-content repeat(6, 1fr)
+    &__bg
+      grid-column: unset
+  .footer-bottom
+    &__links
+      flex-direction: column
+      align-items: flex-end
+  .price
+    &__wrapper
+      grid-template-columns: 1fr
+    &__item
+      flex-direction: row
+  .useful-links
+    &__list
+      flex-wrap: wrap
+    &__link
+      min-width: 240px
+      flex-direction: row
+      align-items: center
+  .dialog
+    &--order
+      padding-right: calc(24px + (32 - 24) * ((100vw - 375px) / (683 - 375)))
+      padding-left: calc(24px + (32 - 24) * ((100vw - 375px) / (683 - 375)))
+    &__note
+      font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (683 - 375)))
+      line-height: calc(20px + (24 - 20) * ((100vw - 375px) / (683 - 375)))
+  .form
+    &--order
+      row-gap: calc(15px + (24 - 15) * ((100vw - 375px) / (683 - 375)))
+      & input
+        height: auto
+    &__label
+      font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (683 - 375)))
+      line-height: calc(17px + (19 - 17) * ((100vw - 375px) / (683 - 375)))
+    &__total
+      padding: calc(15px + (24 - 15) * ((100vw - 375px) / (683 - 375)))
+    &__total-value
+      font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (683 - 375)))
+      line-height: calc(18px + (24 - 18) * ((100vw - 375px) / (683 - 375)))
+  .form-group
+    row-gap: calc(15px + (24 - 15) * ((100vw - 375px) / (683 - 375)))
+    &:has(.form__total)
+      row-gap: 5px
+    &.form-group--column
+      row-gap: 5px
+  .form-row
+    &__label
+      font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (683 - 375)))
+      line-height: calc(20px + (24 - 20) * ((100vw - 375px) / (683 - 375)))
+
+@media (max-width: 576px)
+  .mobile-menu
+    &__announce
+      display: flex
+  .header-main
+    &__announce
+      display: none
+  .categories
+    &__wrapper
+      grid-template-columns: 1fr
+      grid-template-rows: none
+      row-gap: calc(16px + (24 - 16) * ((100vw - 375px) / (576 - 375)))
+    &__item
+      height: 280px
+      &:first-child
+        grid-column: unset
+      & > img
+        right: calc(-80px + (0 - -80) * ((100vw - 375px) / (576 - 375)))
+      &--fruit-berry-crops
+        & > img
+          width: calc(70% + (50 - 70) * ((100vw - 375px) / (576 - 375)))
+      &--decorative-shrubs
+        & > img
+          width: calc(75% + (65 - 75) * ((100vw - 375px) / (576 - 375)))
+  .product-item
+    &__button
+      max-width: unset
+  .subcategories
+    &__wrapper
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))
+  .dialog
+    min-width: unset
+    width: 90%
+  #confirmDeleteItem
+    & .dialog__controls
+      flex-wrap: wrap
+      row-gap: 10px
+  .form
+    &--order
+      & .form-group
+        flex-direction: column
+        & > .form-row
+          width: 100%
+
+@media (max-width: 460px)
+  .mobile-menu
+    height: 100vh
+  .cover
+    &__button
+      width: 80%
+  .advantages
+    &__wrapper
+      grid-template-rows: min-content
+  .footer-main
+    flex-direction: column
+    row-gap: 25px
+    &__wrapper
+      align-items: flex-start
+    &__column
+      flex-flow: column-reverse
+      align-items: flex-start
+      row-gap: 10px
+  .footer-bottom
+    flex-flow: column-reverse
+    align-items: flex-start
+    row-gap: 10px
+    &__links
+      align-items: flex-start
+  .price
+    &__item
+      flex-direction: column
+  .history
+    &__content-text
+      padding: 0
+    &__content-images
+      flex-wrap: wrap
+  .order
+    &__form-row
+      position: relative
+      flex-direction: column
+  .form
+    &__total
+      flex-direction: column
+      row-gap: 5px
+  .form-row
+    &__right
+      position: absolute
+      right: 24px
+      row-gap: 5px
+  .not-found
+    &__buttons
+      flex-wrap: wrap
+      & .button
+        width: 95%
+
+@media (max-width: 375px)
+  .logo-link
+    width: unset
+    max-width: 100%
+  .cover
+    &__content
+      width: 90vw
+      height: 90vw
+  .advantages
+    &__bg
+      width: 100%
+  .categories-page.categories
+    & .categories
+      &__wrapper
+        grid-template-columns: 1fr
+  .articles-list
+    grid-template-columns: 1fr

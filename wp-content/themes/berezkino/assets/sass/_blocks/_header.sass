@@ -1,0 +1,121 @@
+.header
+  position: sticky
+  top: 0
+  background: #FFFFFF
+  box-shadow: $box-shadow-xsmall
+  z-index: 200
+  &__announce
+    font-weight: 700
+    line-height: 19px
+    color: $base-color
+    text-transform: uppercase
+    text-align: center
+    justify-content: center
+
+.header-top
+  padding: 8px 0
+  & .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    column-gap: 40px
+  &__contacts
+    display: flex
+    align-items: center
+    column-gap: 25px
+    & > p,
+    & > a
+      display: flex
+      align-items: center
+      column-gap: 4px
+      font-weight: 500
+      line-height: 19px
+      color: #949494
+    & .svg-icon
+      width: 18px
+      height: 18px
+      fill: #949494
+
+  &__buttons
+    display: flex
+    align-items: center
+    column-gap: 10px
+
+.header-main
+  padding-top: 16px
+  padding-bottom: 24px
+  background-color: #FFFFFF
+  & .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    column-gap: 35px
+  &__menu
+    display: flex
+    align-items: center
+    column-gap: 40px
+    & ul
+      width: 246px
+      position: absolute
+      padding: 24px
+      display: none
+      flex-direction: column
+      row-gap: 19px
+      left: -24px
+      top: 22px
+      border-radius: 24px
+      background-color: #FFFFFF
+      box-shadow: $box-shadow-large
+      z-index: 999
+      & > li
+        & > a
+          color: #353535
+
+  &__menu-item
+    position: relative
+    &:hover
+      & > ul
+        display: flex
+  &__menu-link
+    display: flex
+    align-items: center
+    justify-content: center
+    column-gap: 10px
+    font-weight: 500
+    font-size: 18px
+    line-height: 22px
+    color: #1E1E1E
+    & > svg
+      width: 11px
+      height: 7px
+      fill: #1E1E1E
+  &__announce
+    display: none
+
+  &__buttons
+    display: flex
+    column-gap: 40px
+
+  &__cart
+    position: relative
+    display: flex
+    align-items: center
+    -moz-column-gap: 12px
+    column-gap: 12px
+    font-weight: 500
+    font-size: 18px
+    line-height: 22px
+    color: #1e1e1e
+  &__cart-amount
+    background-color: #d60d0d
+    position: absolute
+    border-radius: 50%
+    width: 16px
+    height: 16px
+    color: white
+    font-size: 8px
+    display: flex
+    align-items: center
+    justify-content: center
+    top: -10px
+    left: 10px

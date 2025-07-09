@@ -1,0 +1,25 @@
+.legend
+  & details
+    padding: 16px
+    background-color: #ffffff
+    border: 1px solid #ececec
+    box-shadow: $box-shadow-xsmall
+    border-radius: 16px
+    cursor: pointer
+    & > summary
+      display: list-item
+      font-size: 18px
+      line-height: 27px
+      color: #1e1e1e
+      transition: color 0.3s
+      &::marker
+        color: $base-color
+    & ul
+      padding: 10px 15px 5px
+      display: flex
+      flex-direction: column
+      row-gap: 10px
+      & li
+        font-size: 16px
+        & span
+          font-weight: 500

@@ -1,0 +1,59 @@
+.contacts
+  padding-bottom: 140px
+  &__wrapper
+    padding: 32px 36px
+    display: flex
+    column-gap: 48px
+    background-color: #FFFFFF
+    border: 1px solid #ECECEC
+    box-shadow: $box-shadow-xsmall
+    border-radius: 28px
+  &__content
+    padding: 24px 0
+    display: flex
+    flex-direction: column
+    row-gap: 36px
+    width: 481px
+  &__title
+    margin: 0
+    font-family: 'Comfortaa'
+    font-weight: 700
+    font-size: 40px
+    line-height: 48px
+    color: #1E1E1E
+  &__data
+    display: flex
+    flex-direction: column
+    & > a
+      &:first-of-type
+        margin-bottom: 24px
+    & a[href*="tel:"]
+      font-weight: 700
+      font-size: 40px
+      line-height: 48px
+      color: #1E1E1E
+    & a[href*="mailto:"]
+      font-size: 16px
+      line-height: 24px
+      text-decoration-line: underline
+      color: $base-color-darker
+  &__data-wrapper
+    display: flex
+    flex-direction: column
+    row-gap: 8px
+    &:first-child
+      margin-bottom: 16px
+    & > span
+      font-weight: 700
+      font-size: 20px
+      line-height: 28px
+      color: #1E1E1E
+    & > p
+      font-size: 16px
+      line-height: 24px
+      color: #434343
+  &__map
+    flex-grow: 1
+    border-radius: 24px
+    border: 1px solid #C8C8C8
+    overflow: hidden

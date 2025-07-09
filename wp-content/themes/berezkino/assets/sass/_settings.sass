@@ -1,0 +1,386 @@
+*
+  box-sizing: border-box
+  font-family: 'Inter'
+  scroll-behavior: smooth
+  scroll-margin-top: 170px
+
+body
+  background-color: $bg-color
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: 100vh
+
+a
+  text-decoration: none
+  color: inherit
+
+p
+  margin: 0
+
+ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+section
+  padding-bottom: 160px
+  &.legend
+    padding-bottom: 45px
+
+main
+  padding-top: 65px
+  padding-bottom: 110px
+  flex-grow: 1
+  &.product
+    padding-bottom: 45px
+
+.container
+  width: 100%
+  max-width: 1600px
+  margin-left: auto
+  margin-right: auto
+
+.two-columns-container
+  display: flex
+  column-gap: 16px
+  align-items: flex-start
+
+.burger-menu
+  display: none
+  flex-direction: column
+  justify-content: space-evenly
+  flex-shrink: 0
+  width: 24px
+  height: 24px
+  cursor: pointer
+  &__item
+    background-color: #000000
+    height: 2px
+    transition: opacity 0.35s, transform 0.35s
+  &.animate
+    & .burger-menu__item--top
+      transform: translateY(7px) rotate(45deg)
+    & .burger-menu__item--middle
+      opacity: 0
+    & .burger-menu__item--bottom
+      transform: translateY(-6px) rotate(-45deg)
+
+.mobile-menu
+  width: 100%
+  margin-right: auto
+  margin-left: auto
+  position: absolute
+  right: 0
+  left: 0
+  top: -999px
+  padding: 32px
+  display: flex
+  flex-direction: column
+  row-gap: 30px
+  align-items: center
+  background: $bg-color
+  z-index: -1
+  opacity: 0
+  transition: top 0.8s, opacity 0.8s 0.4s
+  &__close
+    margin-left: auto
+    width: 15px
+    height: 15px
+    cursor: pointer
+  &__announce
+    display: none
+  &__list
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 10px
+    width: 100%
+    & > *
+      width: 100%
+      text-align: center
+  &__contacts
+    display: flex
+    flex-direction: column
+    row-gap: 5px
+    align-items: center
+    & p, & a
+      color: #949494
+      display: flex
+      align-items: center
+      column-gap: 4px
+      & > svg
+        fill: #949494
+  &__buttons
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 10px
+    width: 100%
+    & a
+      width: 100%
+      max-width: 250px
+
+.logo-link
+  display: flex
+  height: 56px
+.logo
+  height: inherit
+  width: inherit
+  object-position: left
+  object-fit: contain
+
+.svg-icon
+  width: 20px
+  height: 20px
+  fill: #000000
+
+.button
+  width: 100%
+  max-width: 464px
+  padding: 12px 36px
+  display: flex
+  align-items: center
+  justify-content: center
+  font-weight: 600
+  text-align: center
+  border-radius: 12px
+  border: none
+  cursor: pointer
+  &--fill
+    color: #FFFFFF
+    background: $base-color
+  &--outline
+    color: $base-color-darker
+    border: 2px solid $base-color-darker
+    background: none
+  &--red
+    color: #ffffff
+    background: #f60000
+
+.social-button
+  padding: 8px 24px 8px 16px
+  display: flex
+  align-items: center
+  justify-content: center
+  column-gap: 10px
+  font-weight: 500
+  line-height: 19px
+  border-radius: 8px
+  border: 1px solid
+  &--green
+    color: $base-color
+    border-color: $base-color
+    & > svg
+      fill: $base-color
+  &--blue
+    color: #34A8DB
+    border-color: #34A8DB
+    & > svg
+      fill: #34A8DB
+
+.section-header
+  display: flex
+  flex-direction: column
+  align-items: center
+  row-gap: 8px
+  margin-bottom: 55px
+  &__title
+    margin: 0
+    font-family: 'Comfortaa'
+    font-size: 56px
+    line-height: 52px
+    font-weight: 700
+    color: $base-color-darker
+    text-align: center
+    text-transform: uppercase
+  &__subtitle
+    font-family: 'Comfortaa'
+    font-weight: 700
+    font-size: 24px
+    line-height: 29px
+    color: $base-color
+    text-align: center
+
+.page-header
+  margin-bottom: 80px
+  display: flex
+  flex-direction: column
+  align-items: center
+  row-gap: 16px
+  &__title
+    margin: 0
+    font-family: 'Comfortaa'
+    font-weight: 700
+    font-size: 40px
+    line-height: 48px
+    color: #1E1E1E
+    text-align: center
+  &__subtitle
+    font-family: 'Comfortaa'
+    font-size: 16px
+    line-height: 24px
+    color: #636363
+    text-align: center
+
+.splide
+  &__track
+    padding-bottom: 10px
+  &__arrow
+    width: 56px
+    height: 56px
+    background-color: $base-color
+    opacity: 1
+    &--prev
+      left: 0
+    &--next
+      right: 0
+
+.breadcrumps
+  margin-bottom: 10px
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  column-gap: 8px
+  row-gap: 5px
+  & > a,
+  & > span
+    display: flex
+    align-items: center
+    column-gap: 8px
+    font-weight: 600
+    font-size: 16px
+    line-height: 19px
+    color: #1E1E1E
+    &.breadcrumps__link--active
+      color: $base-color
+
+.sidebar
+  padding: 24px
+  width: 253px
+  min-width: 220px
+  background: #FFFFFF
+  border: 1px solid #D9D9D9
+  border-radius: 24px
+  &__header
+    margin: 0
+    margin-bottom: 24px
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #1E1E1E
+  &__menu
+    display: flex
+    flex-direction: column
+    row-gap: 12px
+    & > li > a
+      display: flex
+      padding: 12px 8px
+      font-weight: 400
+      font-size: 16px
+      line-height: 19px
+      color: #434343
+      border-radius: 8px
+
+.useful-links
+  padding: 0
+  padding-bottom: 45px
+  &__list
+    display: flex
+    column-gap: 12px
+    row-gap: 12px
+  &__link
+    width: 30%
+    min-width: 180px
+    padding: 16px
+    display: flex
+    align-items: center
+    column-gap: 24px
+    flex-grow: 1
+    background-color: #FFFFFF
+    border: 1px solid #ECECEC
+    box-shadow: $box-shadow-xsmall
+    border-radius: 16px
+    & > svg
+      width: 48px
+      height: 48px
+  &__content
+    & > p
+      font-size: 18px
+      line-height: 27px
+      color: #1E1E1E
+    & > span
+      font-weight: 600
+      font-size: 16px
+      line-height: 19px
+      color: $base-color
+
+.articles-list
+  $card-padding: 24px
+  margin-bottom: 42px
+  column-gap: 16px
+  row-gap: 24px
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr))
+  &__item
+    display: flex
+    flex-direction: column
+    background-color: #FFFFFF
+    border: 1px solid #C8C8C8
+    box-shadow: $box-shadow-xsmall
+    border-radius: 24px
+    overflow: hidden
+  &__link
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: space-between
+    & > h4
+      flex-grow: 1
+      margin: 0
+      margin-bottom: 12px
+      padding-left: $card-padding
+      padding-right: $card-padding
+      font-weight: 700
+      font-size: 24px
+      line-height: 34px
+      color: #1E1E1E
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      overflow: hidden
+    & > p
+      margin-bottom: 40px
+      padding-left: $card-padding
+      padding-right: $card-padding
+      font-size: 16px
+      line-height: 24px
+      color: #1E1E1E
+      display: -webkit-box
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+      overflow: hidden
+    & > span
+      display: flex
+      padding-left: $card-padding
+      padding-right: $card-padding
+      padding-bottom: $card-padding
+      font-weight: 600
+      font-size: 16px
+      line-height: 19px
+      color: $base-color-darker
+  &__img
+    margin-bottom: 24px
+    height: 200px
+    overflow: hidden
+    & > img
+      object-fit: cover
+      width: 100%
+      height: 100%
+
+.open
+  top: 98px
+  opacity: 1
+
+.overflow-hidden
+  overflow: hidden

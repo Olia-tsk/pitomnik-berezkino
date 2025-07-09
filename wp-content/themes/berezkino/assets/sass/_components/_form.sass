@@ -1,0 +1,192 @@
+.form
+  & textarea,
+  & input
+    padding: 4px 8px
+    background: #FFFFFF
+    border: 1px solid #ECECEC
+    border-radius: 8px
+    &[type="number"]
+      padding: 0 8px
+      font-size: 14px
+      border-radius: 3px
+      width: 50px
+      text-align: center
+      -moz-appearance: textfield
+      &::-webkit-outer-spin-button
+        display: none
+      &::-webkit-inner-spin-button
+        display: none
+  & textarea
+    height: 100px
+    resize: vertical
+  &__label
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 19px
+    color: #1e1e1e
+  &__total
+    display: flex
+    justify-content: space-between
+    column-gap: 80px
+    padding: 24px
+    background: #ffffff
+    border: 1px solid #ececec
+    border-radius: 8px
+  &__total-value
+    font-style: normal
+    font-weight: 700
+    font-size: 20px
+    line-height: 24px
+    color: #1e1e1e
+  &__button
+    width: 100%
+    max-width: unset
+    height: 50px
+
+.form-group
+  display: flex
+  column-gap: 15px
+  align-items: stretch
+  &__btn
+    width: 23px
+    height: 23px
+    border: 2px solid $base-color
+    border-radius: 3px
+    background: unset
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    font-weight: 600
+    font-size: 16px
+    line-height: 19px
+    color: $base-color
+  & > .form-row
+    width: 50%
+  &--column
+    flex-direction: column
+    row-gap: 10px
+
+.form-row
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  column-gap: 10px
+  row-gap: 5px
+  align-items: flex-start
+  &__content
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    row-gap: 10px
+  &__content-title
+    font-size: 16px
+    line-height: 19px
+    color: $base-color-darker
+  &__content-desc
+    font-size: 14px
+    line-height: 17px
+    color: #636363
+  &__amount
+    display: flex
+    column-gap: 8px
+    & .form-group__btn
+      width: 32px
+      height: 32px
+      border-radius: 8px
+  &__right
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-end
+    row-gap: 15px
+    min-width: max-content
+    text-align: right
+  &__right-btn
+    border: none
+    background: none
+    padding: 0
+    margin: 0
+    width: 24px
+    height: 24px
+    cursor: pointer
+    & svg
+      fill: #949494
+      width: inherit
+      height: inherit
+      object-fit: contain
+  &__right-total
+    font-weight: 600
+    font-size: 20px
+    line-height: 24px
+    color: #1e1e1e
+  &__checkbox
+    display: none
+    &:checked
+      & ~ .form-row__label
+        &::before
+          background-image: url("data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' width='15px' height='15px' fill='white'><path d='M17.5346 0.224019C17.8251 0.519295 17.8213 0.994153 17.526 1.28464L6.85304 11.7846C6.56099 12.072 6.09241 12.0718 5.80061 11.7842L0.473548 6.53418C0.178528 6.24343 0.175069 5.76857 0.465821 5.47355C0.756572 5.17853 1.23143 5.17507 1.52645 5.46582L6.32752 10.1974L16.474 0.215356C16.7693 -0.075135 17.2442 -0.0712564 17.5346 0.224019Z' /></svg>")
+          background-repeat: no-repeat
+          background-position: center
+          background-size: 70%
+          background-color: $base-color-darker
+      & ~ .form-row__controls
+        display: flex
+  &__label
+    padding-left: 35px
+    font-size: 16px
+    line-height: 24px
+    color: #1e1e1e
+    cursor: pointer
+    & span
+      white-space: nowrap
+    &::before
+      display: flex
+      justify-content: center
+      align-items: center
+      content: ""
+      position: absolute
+      left: 0
+      top: 5px
+      width: 20px
+      height: 20px
+      color: #ffffff
+      border-radius: 3px
+      border: 1px solid $base-color-darker
+      transition: background-color 0.3s
+  &__controls
+    padding-top: 4px
+    padding-left: 35px
+    display: none
+    align-items: stretch
+    width: 100%
+    column-gap: 10px
+  &:has(input[name="policy"])
+    & a
+      color: $base-color
+
+.form-divider
+  margin: 0
+  box-sizing: border-box
+  height: 1px
+  width: 100%
+  background-color: #d9d9d9
+  border: unset
+
+.form
+  &--order
+    display: flex
+    flex-direction: column
+    row-gap: 24px
+    & textarea,
+    & input
+      padding: 8px
+      font-style: normal
+      font-weight: 400
+      font-size: 14px
+      line-height: 21px
+      color: #1e1e1e
+    & input
+      min-height: 50px
+      width: 100%

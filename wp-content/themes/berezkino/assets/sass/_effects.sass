@@ -1,0 +1,487 @@
+.button
+  transition: background 0.3s, color 0.3s
+  &:hover
+    &.button--fill
+      color: #FFFFFF
+      background: $base-color-darker
+    &.button--outline
+      color: #FFFFFF
+      background: $base-color
+      border: 2px solid $base-color
+    &.button--red
+      color: #ffffff
+      background: #d71f1f
+
+.header-top
+  &__contacts
+    & > a
+      transition: color 0.3s
+      & .svg-icon
+        transition: fill 0.3s
+      &:hover
+        color: $base-color
+        & .svg-icon
+          fill: $base-color
+
+.header-main
+  &__menu-link
+    transition: color 0.3s
+    & > svg
+      transition: fill 0.3s
+    &:hover
+      color: $base-color
+      & > svg
+        fill: $base-color
+  &__cart
+    transition: color 0.3s
+    & > svg
+      transition: fill 0.3s
+    &:hover
+      color: $base-color
+      & > svg
+        fill: $base-color
+  &__menu
+    & ul
+      & > li
+        & > a
+          transition: color 0.3s
+        &:hover
+          & > a
+            color: $base-color
+
+.social-button
+  transition: color 0.3s, background-color 0.3s
+  & > svg
+    transition: fill 0.3s
+  &:hover
+    &.social-button--green
+      color: #FFFFFF
+      background-color: $base-color
+      & > svg
+        fill: #FFFFFF
+    &.social-button--blue
+      color: #FFFFFF
+      background-color: #34A8DB
+      & > svg
+        fill: #FFFFFF
+
+.categories__item
+  transition: background-color 0.3s
+  & > p
+    transition: color 0.3s
+  & > img
+    transition: transform 0.5s
+  &:hover
+    background-color: #DCF0D3
+    & > p
+      color: $base-color
+    & > img
+      transform: scale(1.1)
+
+.subcategories__item
+  transition: background-color 0.3s
+  &  img
+    transition: transform 0.5s
+  & span
+    transition: color 0.3s
+  &:hover
+    background-color: #DCF0D3
+    &  img
+      transform: scale(1.1)
+    & span
+      color: $base-color
+
+.articles-list
+  &__item
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s
+    & > a
+      & .articles-list__img
+        & > img
+          transition: transform 0.5s
+      & > h4
+        transition: color 0.3s
+      & > p
+        transition: color 0.3s
+    &:hover
+      background-color: #DCF0D3
+      border-color: rgba(25, 118, 6, 0.4)
+      box-shadow: $box-shadow-small
+      & > a
+        & .articles-list__img
+          & > img
+            transform: scale(1.1)
+        & > h4
+          color: $base-color
+        & > p
+          color: $base-color
+
+.article
+  &__content
+    &  a
+      transition: color 0.3s
+      &:hover
+        color: $base-color-darker
+
+.splide
+  &__arrow
+    transition: background-color 0.3s
+    &:hover:not(:disabled)
+      opacity: 1
+      background-color: $base-color-darker
+
+.contacts
+  &__data
+    & a[href*="tel:"]
+      transition: color 0.3s
+      &:hover
+        color: $base-color
+    & a[href*="mailto:"]
+      transition: color 0.3s
+      &:hover
+        color: $base-color
+    & a[href*="https:"]
+      transition: color 0.3s
+      &:hover
+        color: $base-color
+
+.footer-main
+  &__column
+    & > a
+      transition: color 0.3s
+      &:hover
+        color: $base-color
+        & .svg-icon
+          fill: $base-color
+      & .svg-icon
+        transition: fill 0.3s
+
+.footer-bottom
+  &__links
+    & > a
+      transition: color 0.3s
+      &:hover
+        color: $base-color
+
+.sidebar
+  &__menu
+    & > li > a
+      transition: background-color 0.3s, color 0.3s
+      &:hover
+        background-color: rgba(25, 118, 6, 0.1)
+        color: $base-color-darker
+
+.price
+  &__item
+    transition: background-color 0.3s, box-shadow 0.3s
+    & p
+      transition: color 0.3s
+    & span
+      transition: color 0.3s
+    &:hover
+      background-color: #DCF0D3
+      box-shadow: $box-shadow-small
+      & p
+        color: $base-color
+      & span
+        color: $base-color
+
+.useful-links
+  &__link
+    transition: background-color 0.3s, box-shadow 0.3s
+    & p
+      transition: color 0.3s
+    &:hover
+      background-color: #DCF0D3
+      box-shadow: $box-shadow-small
+      & p
+        color: $base-color
+
+.form-group
+  &__btn
+    transition: background-color 0.3s, color 0.3s
+    &:hover
+      background-color: $base-color
+      color: #FFFFFF
+
+.delivery
+  &__content
+    & a
+      transition: color 0.3s
+      &:hover
+        color: $base-color-darker
+
+.legend
+  & details
+    transition: background-color 0.3s, box-shadow 0.3s
+    &:hover
+      background-color: #dcf0d3
+      box-shadow: $box-shadow-small
+      & summary
+        color: $base-color
+
+.breadcrumps
+  & > a
+    transition: color 0.3s
+    &:hover
+      color: $base-color
+
+.policy
+  & a
+    transition: color 0.3s
+    &:hover
+      color: $base-color-darker
+
+.form-row
+  &__content-title
+    transition: color 0.3s
+    &:hover
+      color: $base-color
+  &:has(input[name="policy"])
+    & a
+      transition: color 0.3s
+      &:hover
+        color: $base-color-darker
+
+@media (max-width: 735px)
+  .button
+    transition: none
+    &:hover
+      &.button--fill
+        color: #FFFFFF
+        background: $base-color
+      &.button--outline
+        color: $base-color-darker
+        background: none
+        border: 2px solid $base-color-darker
+      &.button--red
+        color: #ffffff
+        background: #f60000
+
+  .header-top
+    &__contacts
+      & > a
+        transition: none
+        & .svg-icon
+          transition: none
+        &:hover
+          color: #949494
+          & .svg-icon
+            fill: #949494
+
+  .header-main
+    &__menu-link
+      transition: none
+      & > svg
+        transition: none
+      &:hover
+        color: #1E1E1E
+        & > svg
+          fill: #1E1E1E
+    &__cart
+      transition: none
+      & > svg
+        transition: none
+      &:hover
+        color: #1E1E1E
+        & > svg
+          fill: #1E1E1E
+    &__menu
+      & ul
+        & > li
+          & > a
+            transition: none
+          &:hover
+            & > a
+              color: #353535
+
+  .social-button
+    transition: none
+    & > svg
+      transition: none
+    &:hover
+      &.social-button--green
+        color: $base-color
+        background-color: unset
+        & > svg
+          fill: $base-color
+      &.social-button--blue
+        color: #34A8DB
+        background-color: unset
+        & > svg
+          fill: #34A8DB
+
+  .categories__item
+    transition: none
+    & > p
+      transition: none
+    & > img
+      transition: none
+    &:hover
+      background-color: #FFFFFF
+      & > p
+        color: #353535
+      & > img
+        transform: none
+
+  .subcategories__item
+    transition: none
+    &  img
+      transition: none
+    & span
+      transition: none
+    &:hover
+      background-color: #FFFFFF
+      &  img
+        transform: none
+      & span
+        color: $base-color-darker
+
+  .articles-list
+    &__item
+      transition: none
+      & > a
+        & .articles-list__img
+          & > img
+            transition: none
+        & > h4
+          transition: none
+        & > p
+          transition: none
+      &:hover
+        background-color: #FFFFFF
+        border-color: #C8C8C8
+        box-shadow: $box-shadow-xsmall
+        & > a
+          & .articles-list__img
+            & > img
+              transform: none
+          & > h4
+            color: #1E1E1E
+          & > p
+            color: #1E1E1E
+
+  .article
+    &__content
+      & a
+        transition: none
+        &:hover
+          color: $base-color
+
+  .splide
+    &__arrow
+      transition: none
+      &:hover:not(:disabled)
+        background-color: $base-color
+
+  .contacts
+    &__data
+      & a[href*="tel:"]
+        transition: none
+        &:hover
+          color: #1E1E1E
+      & a[href*="https:"]
+        transition: none
+        &:hover
+          color: #1E1E1E
+      & a[href*="mailto:"]
+        transition: none
+        &:hover
+          color: $base-color-darker
+
+  .footer-main
+    &__column
+      & > a
+        transition: none
+        &  .svg-icon
+          transition: none
+        &:hover
+          color: #949494
+          & .svg-icon
+            fill: #949494
+
+  .footer-bottom
+    &__links
+      & > a
+        transition: none
+        &:hover
+          color: #636363
+
+  .sidebar
+    &__menu
+      & > li > a
+        transition: none
+        &:hover
+          background-color: unset
+          color: #434343
+
+  .price
+    &__item
+      transition: none
+      & p
+        transition: none
+      & span
+        transition: none
+      &:hover
+        background-color: #FFFFFF
+        box-shadow: $box-shadow-xsmall
+        & p
+          color: #1E1E1E
+        & span
+          color: #1E1E1E
+
+  .useful-links
+    &__link
+      transition: none
+      & p
+        transition: none
+      &:hover
+        background-color: #FFFFFF
+        box-shadow: $box-shadow-xsmall
+        & p
+          color: #1E1E1E
+
+  .form-group
+    &__btn
+      transition: none
+      &:hover
+        background-color: unset
+        color: $base-color
+
+  .delivery
+    &__content
+      & a
+        transition: none
+        &:hover
+          color: $base-color
+
+  .legend
+    & details
+      transition: none
+      &:hover
+        background-color: #ffffff
+        box-shadow: $box-shadow-xsmall
+        & summary
+          color: #1e1e1e
+
+  .breadcrumps
+    &  > a
+      transition: none
+    &:hover
+      color: #1e1e1e
+
+  .policy
+    & a
+      transition: none
+      &:hover
+        color: $base-color
+
+  .form-row
+    &__content-title
+      transition: none
+      &:hover
+        color: $base-color-darker
+    &:has(input[name="policy"])
+      & a
+        transition: none
+        &:hover
+          color: $base-color
