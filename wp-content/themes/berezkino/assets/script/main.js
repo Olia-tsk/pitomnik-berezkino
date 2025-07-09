@@ -173,6 +173,7 @@ jQuery(document).ready(function ($) {
   });
 });
 
+// взаимодействие с количеством саженцев, удаление из корзины
 let currentItemForDelete = null;
 
 if (document.querySelector("main.order")) {
