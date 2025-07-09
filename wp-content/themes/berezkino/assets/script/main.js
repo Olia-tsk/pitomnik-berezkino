@@ -156,6 +156,7 @@ if (document.getElementById("addToOrder")) {
   });
 }
 
+// вывод саженцев, добавленных в корзину, на страницу корзины
 jQuery(document).ready(function ($) {
   $.ajax({
     url: ajax.url,
@@ -245,6 +246,8 @@ if (document.querySelector("main.order")) {
     countTotalSum();
     updateCartBadge();
   });
+
+  // показываем модальное окно для отправки заявки
   const orderButton = document.getElementById("orderButton");
   orderButton.addEventListener("click", function () {
     jQuery("input[name=phone]").mask(phoneMaskBehavior, spOptions);
