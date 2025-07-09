@@ -172,9 +172,37 @@ jQuery(document).ready(function ($) {
   });
 });
 
+let currentItemForDelete = null;
+
 if (document.querySelector("main.order")) {
   jQuery(document).ajaxComplete(function () {
     const items = document.querySelectorAll(".order__form-wrapper > div");
+    const deleteModal = document.getElementById("confirmDeleteItem");
+    const confirmDeleteFromModal = document.getElementById("confirmDeleteFromModal");
+    const cancelDeleteFromModal = document.getElementById("cancelDeleteFromModal");
+
+    confirmDeleteFromModal.onclick = function () {
+      if (currentItemForDelete) {
+        let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
+        deleteItem(localStorageKey);
+        updateCartBadge();
+        deleteModal.close();
+        currentItemForDelete = null;
+      }
+    };
+
+    cancelDeleteFromModal.onclick = function () {
+      if (currentItemForDelete) {
+        let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
+        currentItemForDelete.querySelector("input[name=amount]").value = 1;
+        saveChangesToLocalstorage(localStorageKey, currentItemForDelete);
+        refreshOrderItems();
+        updateCartBadge();
+        deleteModal.close();
+        currentItemForDelete = null;
+      }
+    };
+
     items.forEach((item) => {
       let valueBtns = item.querySelectorAll(".form-group__btn");
       let amount = item.querySelector("input[name=amount]");
@@ -198,6 +226,13 @@ if (document.querySelector("main.order")) {
           amountValue = item.querySelector("input[name=amount]").value;
           let localStorageKey = item.querySelector("input[name=itemKey]").value;
           item.querySelector("#pricePerItem").innerHTML = calcPricePerItem(amountValue, pricePerItem) + "&nbsp;₽";
+
+          if (amountValue == 0) {
+            currentItemForDelete = item;
+            deleteModal.showModal();
+            return;
+          }
+
           countItems();
           countTotalSum();
           saveChangesToLocalstorage(localStorageKey, item);
@@ -205,27 +240,11 @@ if (document.querySelector("main.order")) {
         });
       });
     });
+
     countItems();
     countTotalSum();
     updateCartBadge();
-
-    jQuery(document)
-      .off("click", "#deleteItem")
-      .on("click", "#deleteItem", function (e) {
-        e.preventDefault();
-        const deleteModal = document.getElementById("confirmDeleteItem");
-        deleteModal.showModal();
-
-        const deleteFromModal = document.getElementById("deleteFromModal");
-        deleteFromModal.onclick = function () {
-          let localStorageKey = e.currentTarget.querySelector("input").value;
-          deleteItem(localStorageKey);
-          updateCartBadge();
-          deleteModal.close();
-        };
-      });
   });
-
   const orderButton = document.getElementById("orderButton");
   orderButton.addEventListener("click", function () {
     jQuery("input[name=phone]").mask(phoneMaskBehavior, spOptions);
