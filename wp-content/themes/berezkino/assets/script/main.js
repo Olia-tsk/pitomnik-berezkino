@@ -523,3 +523,40 @@ jQuery("#orderRequest").on("submit", function (e) {
     },
   });
 });
+
+// Валидация форм
+jQuery("form").each(function () {
+  jQuery(this).validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+      },
+
+      phone: {
+        required: true,
+        minlength: 15,
+      },
+
+      policy: {
+        required: true,
+      },
+    },
+
+    messages: {
+      name: {
+        required: "Нам нужно Ваше имя и (или) фамилия, чтобы знать как к Вам обращаться",
+        minlength: "Имя должно быть не менее 2 символов",
+      },
+
+      phone: {
+        required: "Укажите Ваш номер телефона",
+        minlength: jQuery.validator.format("Формат 8 (999) 999-99-99 или (999) 999-99-99"),
+      },
+
+      policy: {
+        required: "Это поле является обязательным",
+      },
+    },
+  });
+});
