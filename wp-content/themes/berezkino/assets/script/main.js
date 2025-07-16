@@ -489,12 +489,17 @@ jQuery("#orderRequest").on("submit", function (e) {
   fillTotalDataToForm();
   fillOrderItemsHiddenField();
 
+  var checkField = document.querySelector(".checkField");
   const sendOrderModal = document.getElementById("sendOrder");
   const successMessageModal = document.getElementById("successMessage");
   const errorMessageModal = document.getElementById("errorMessage");
+  var form = jQuery(this);
   var $that = jQuery(this);
   var formData = new FormData($that[0]);
   formData.append("action", "send_order_to_telegram");
+
+  if (checkField.value != "") return false;
+  if (!form.valid()) return false;
 
   jQuery.ajax({
     url: ajax.url,
@@ -509,8 +514,6 @@ jQuery("#orderRequest").on("submit", function (e) {
         CartStorage.removeAll();
         updateCartBadge();
         refreshOrderItems();
-        // затем редирект
-        // window.location.href = "/";
         console.log(response);
       } else {
         errorMessageModal.showModal();
