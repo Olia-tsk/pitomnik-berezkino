@@ -99,7 +99,7 @@ Template Name: Оформление заказа
         </div>
 
         <div class="form-row">
-            <input type="checkbox" name="policy" id="policy" class="form-row__checkbox" checked required>
+            <input type="checkbox" name="policy" id="policy" class="form-row__checkbox" required>
             <label for="policy" class="form-row__label">
                 Согласен с
                 <a href="<?= get_privacy_policy_url(); ?>" target="_blank">
@@ -112,7 +112,7 @@ Template Name: Оформление заказа
 
         <input type="hidden" name="orderContent" id="orderContent" value="" readonly>
 
-        <button type="submit" class="form__button button button--fill">Оформить</button>
+        <button type="submit" class="form__button button button--fill" id="sendOrderButton">Оформить</button>
     </form>
 </dialog>
 
