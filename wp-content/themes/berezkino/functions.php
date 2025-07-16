@@ -17,6 +17,7 @@ add_action('wp_enqueue_scripts', function () {
     // подключение скриптов
     wp_enqueue_script('splide', get_template_directory_uri() . '/assets/script/splide.min.js', array(), '1.0', true);
     wp_enqueue_script('toastify', 'https://cdn.jsdelivr.net/npm/toastify-js', array(), '1.12', true);
+    wp_enqueue_script('validate', get_template_directory_uri() . '/assets/script/jquery.validate.min.js', array(), '1.19', true);
     wp_enqueue_script('mask', get_template_directory_uri() . '/assets/script/jquery.mask.min.js', array(), '1.14', true);
     wp_enqueue_script('main', get_template_directory_uri() . '/assets/script/main.js', array('jquery'), '1.0', true);
 
