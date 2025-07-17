@@ -183,6 +183,7 @@ if (document.querySelector("main.order")) {
     const deleteModal = document.getElementById("confirmDeleteItem");
     const confirmDeleteFromModal = document.getElementById("confirmDeleteFromModal");
     const cancelDeleteFromModal = document.getElementById("cancelDeleteFromModal");
+    const cancelDeleteCrossBtn = document.querySelector(".dialog__close-btn");
 
     confirmDeleteFromModal.onclick = function () {
       if (currentItemForDelete) {
@@ -195,6 +196,18 @@ if (document.querySelector("main.order")) {
     };
 
     cancelDeleteFromModal.onclick = function () {
+      if (currentItemForDelete) {
+        let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
+        currentItemForDelete.querySelector("input[name=amount]").value = 1;
+        saveChangesToLocalstorage(localStorageKey, currentItemForDelete);
+        refreshOrderItems();
+        updateCartBadge();
+        deleteModal.close();
+        currentItemForDelete = null;
+      }
+    };
+
+    cancelDeleteCrossBtn.onclick = function () {
       if (currentItemForDelete) {
         let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
         currentItemForDelete.querySelector("input[name=amount]").value = 1;
