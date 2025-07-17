@@ -34,7 +34,7 @@ function crb_load()
     \Carbon_Fields\Carbon_Fields::boot();
 }
 
-// подключаем файлы с настройками полей для отдельных разделов
+// подключаем файлы с настройками Carbon Fields для отдельных разделов
 add_action('carbon_fields_register_fields', 'register_new_carbon_fields');
 function register_new_carbon_fields()
 {
@@ -42,7 +42,7 @@ function register_new_carbon_fields()
     require_once('plugins/carbon-fields-options/term-meta-options.php');
 }
 
-// Открываем видимость theme-options для пользователей с ролью ниже администратора
+// Открываем видимость Carbon Fields theme-options для пользователей с ролью ниже администратора
 add_filter('carbon_fields_theme_options_container_admin_only_access', '__return_false');
 
 // Регистрируем новые колонки для таблицы в разделе Саженцы
