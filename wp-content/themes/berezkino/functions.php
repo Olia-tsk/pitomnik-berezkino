@@ -54,7 +54,7 @@ function crb_enqueue_custom_carbon_fields_styles()
 }
 
 // Регистрируем новые колонки для таблицы в разделе Саженцы
-add_filter('manage_posts_columns', 'custom_posts_columns');
+add_filter('manage_edit-post_columns', 'custom_posts_columns');
 function custom_posts_columns($columns)
 {
     // Удаляем ненужные колонки
