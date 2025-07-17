@@ -45,6 +45,71 @@ function register_new_carbon_fields()
 // Открываем видимость theme-options для пользователей с ролью ниже администратора
 add_filter('carbon_fields_theme_options_container_admin_only_access', '__return_false');
 
+// Регистрируем новые колонки для таблицы в разделе Саженцы
+add_filter('manage_posts_columns', 'custom_posts_columns');
+function custom_posts_columns($columns)
+{
+    // Удаляем ненужные колонки
+    unset($columns['author']);
+    unset($columns['tags']);
+
+    // Добавляем свои колонки
+    $columns['plant_age'] = 'Возраст';
+    $columns['plant_height'] = 'Высота, см';
+    $columns['plant_size'] =  'Объём, л';
+    $columns['plant_diameter'] = 'Диаметр, м';
+    $columns['plant_price'] = 'Цена, ₽/шт';
+
+    // Можно переставить порядок колонок, создав новый массив
+    $new_columns = array(
+        'cb' => $columns['cb'], // Чекбокс
+        'title' => $columns['title'], // Заголовок
+        'categories' => $columns['categories'], // Категории
+        'plant_age' => $columns['plant_age'],
+        'plant_height' => $columns['plant_height'],
+        'plant_size' => $columns['plant_size'],
+        'plant_diameter' => $columns['plant_diameter'],
+        'plant_price' => $columns['plant_price'],
+        'date' => $columns['date'], // Дата
+
+    );
+
+    return $new_columns;
+}
+
+// Заполняем новые колонки в разделе Саженцы данными
+add_action('manage_posts_custom_column', 'custom_posts_column_content', 10, 2);
+function custom_posts_column_content($column_name, $post_id)
+{
+    $plant_data = carbon_get_the_post_meta('product_item');
+
+    if ($column_name == 'plant_age') {
+        foreach ($plant_data as $item) {
+            echo $item['product_item_age'] . "<br>";
+        }
+    }
+    if ($column_name == 'plant_height') {
+        foreach ($plant_data as $item) {
+            echo $item['product_item_height'] . "<br>";
+        }
+    }
+    if ($column_name == 'plant_size') {
+        foreach ($plant_data as $item) {
+            echo $item['product_item_size'] . "<br>";
+        }
+    }
+    if ($column_name == 'plant_diameter') {
+        foreach ($plant_data as $item) {
+            echo $item['product_item_diameter'] . "<br>";
+        }
+    }
+    if ($column_name == 'plant_price') {
+        foreach ($plant_data as $item) {
+            echo $item['product_item_price'] . "<br>";
+        }
+    }
+}
+
 // получаем список главных категорий
 $categories = get_categories([
     'taxonomy'     => 'category',
