@@ -128,35 +128,13 @@ global $post;
             </div>
             <div class="reviews__slider-track splide__track">
                 <ul class="reviews__slider-list splide__list">
-                    <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
-                        <p>“Очень хороший питомник. Хорошие саженцы, как плодовые, так и декоративные. Брала много, все прижились. Внимательное отношение к покупателям, хорошая честная консультация. Хорошие цены.”</p>
-                        <span>Елена</span>
-                    </li>
-                    <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
-                        <p>“Все подробно рассказали и показали. Посоветовали сделать выбор с учетом всех наших пожеланий. Дали рекомендации по посадке.”</p>
-                        <span>Елена ***</span>
-                    </li>
-                    <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
-                        <p>“Большой выбор рассады”</p>
-                        <span>Виталий Бардышев</span>
-                    </li>
-                    <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
-                        <p>“Уже третий год ездим сюда из города, бензин окупается стоимостью заженцев, ещё и остаётся :)
-                            Качество куда лучше рынка и консультация просто подробнейшая!”</p>
-                        <span>Кирилл Королев​</span>
-                    </li>
-                    <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
-                        <p>“Очень хорошего качества саженцы. Огромнейший выбор. Всегда подробнейшим образом проконсультируют. Как ухаживать, чем удобрить. Всё прижилось 100%! Отличный урожай.”</p>
-                        <span>Olga N</span>
-                    </li>
-                    <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
-                        <p>“Очень приветливый сотрудник, ответил на все вопросы. Хорошие растения и большой выбор. Приеду ещё и всем советую”</p>
-                        <span>Анна Иванова</span>
-                    </li>
-                    <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
-                        <p>“Большой выбор растений, приемлемые цены. Вежливый, приятный консультант. Все рассказал и подсказал. С радостью ещё приедем туда.”</p>
-                        <span>Светлана Русинова</span>
-                    </li>
+                    <?php $reviews = getReviews() ?>
+                    <?php foreach ($reviews as $review): ?>
+                        <li class="reviews__slider-slide splide__slide" style="background-image: url(<?php bloginfo('template_url') ?>/assets/images/reviews-item-bg.svg);">
+                            <p>“<?php echo ($review->review_text) ?>”</p>
+                            <span><?= ($review->review_name) ?></span>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
