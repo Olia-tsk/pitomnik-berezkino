@@ -46,6 +46,13 @@ function register_new_carbon_fields()
 // Открываем видимость Carbon Fields theme-options для пользователей с ролью ниже администратора
 add_filter('carbon_fields_theme_options_container_admin_only_access', '__return_false');
 
+// регистрируем файл с кастомными стилями
+add_action('admin_enqueue_scripts', 'crb_enqueue_custom_carbon_fields_styles');
+function crb_enqueue_custom_carbon_fields_styles()
+{
+    wp_enqueue_style('carbon-fields-custom-theme', get_template_directory_uri() . '/assets/css/carbon-fields-theme.css');
+}
+
 // Регистрируем новые колонки для таблицы в разделе Саженцы
 add_filter('manage_posts_columns', 'custom_posts_columns');
 function custom_posts_columns($columns)
