@@ -40,6 +40,7 @@ function register_new_carbon_fields()
 {
     require_once('plugins/carbon-fields-options/post-meta-options.php');
     require_once('plugins/carbon-fields-options/term-meta-options.php');
+    require_once('plugins/carbon-fields-options/price-theme-options.php');
 }
 
 // Открываем видимость Carbon Fields theme-options для пользователей с ролью ниже администратора
