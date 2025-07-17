@@ -417,3 +417,11 @@ function send_order_to_telegram_callback()
         }
     }
 }
+// запрашиваем данные из таблицы с отзывами
+function getReviews()
+{
+    global $wpdb;
+    $moderated_reviews_object = $wpdb->get_results("SELECT * FROM wp_reviews WHERE review_status = 'опубликовано' ORDER BY review_date DESC");
+
+    return $moderated_reviews_object;
+}
