@@ -1,0 +1,8 @@
+.cf-container__fields .cf-field.cf-file {
+  flex: 1 1 50%;
+}
+
+.cf-field.cf-html .cf-html__content .information-warning {
+  color: #cf000f;
+  font-weight: bold;
+}
