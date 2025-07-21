@@ -431,6 +431,31 @@ function send_order_to_telegram_callback()
         }
     }
 }
+
+// отправка отзыва в таблицу отзывов
+add_action('wp_ajax_insert_new_review', 'insert_new_review_ajax');
+add_action('wp_ajax_nopriv_insert_new_review', 'insert_new_review_ajax');
+
+function insert_new_review_ajax()
+{
+    $reviewName = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : null;
+    $reviewText = isset($_POST['review']) ? htmlspecialchars($_POST['review']) : null;
+
+    if ($reviewName != null && $reviewText != null) {
+
+        global $wpdb;
+        $wpdb->insert('wp_reviews', ['review_name' => $reviewName, 'review_text' => $reviewText]);
+
+        $result = 'success';
+        wp_send_json_success($result);
+    } else {
+        $result = "fail";
+        wp_send_json_error($result);
+    }
+
+    wp_die();
+}
+
 // запрашиваем данные из таблицы с отзывами
 function getReviews()
 {
