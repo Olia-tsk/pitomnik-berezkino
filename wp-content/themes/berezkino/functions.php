@@ -195,7 +195,6 @@ function my_remove_post_formats_support()
 add_action('add_meta_boxes', 'remove_post_custom_fields', 10);
 function remove_post_custom_fields()
 {
-    remove_meta_box('tagsdiv-post_tag', 'post', 'normal');
     remove_meta_box('revisionsdiv', 'post', 'normal');
     remove_meta_box('commentsdiv', 'post', 'normal');
 }
