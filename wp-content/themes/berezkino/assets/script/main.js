@@ -540,6 +540,44 @@ jQuery("#orderRequest").on("submit", function (e) {
   });
 });
 
+jQuery("#reviewForm").on("submit", function (e) {
+  e.preventDefault();
+
+  var checkField = document.querySelector(".checkField");
+  const addReviewModal = document.getElementById("addReview");
+  const successMessageModal = document.getElementById("successMessage");
+  const errorMessageModal = document.getElementById("errorMessage");
+  var form = jQuery(this);
+  var $that = jQuery(this);
+  var formData = new FormData($that[0]);
+  formData.append("action", "insert_new_review");
+
+  if (checkField.value != "") return false;
+  if (!form.valid()) return false;
+
+  jQuery.ajax({
+    url: ajax.url,
+    method: "POST",
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function (response) {
+      if (response.success) {
+        addReviewModal.close();
+        successMessageModal.showModal();
+        console.log(response);
+      } else {
+        errorMessageModal.showModal();
+        console.log(response);
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      errorMessageModal.showModal();
+      console.log(jqXHR, textStatus, errorThrown);
+    },
+  });
+});
+
 // Валидация форм
 jQuery("form").each(function () {
   jQuery(this).validate({
@@ -567,7 +605,7 @@ jQuery("form").each(function () {
 
     messages: {
       name: {
-        required: "Нам нужно Ваше имя и (или) фамилия, чтобы знать как к Вам обращаться",
+        required: "Это поле является обязательным",
         minlength: "Имя должно быть не менее 2 символов",
       },
 
