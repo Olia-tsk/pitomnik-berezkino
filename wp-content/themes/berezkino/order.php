@@ -14,6 +14,9 @@ Template Name: Оформление заказа
 
         <form class="order__form form" action="" method="">
             <div id="orderItems" class="order__form-wrapper">
+                <?php
+                // Вывод саженцев из шаблона 
+                ?>
             </div>
 
             <div class="order__submit">
