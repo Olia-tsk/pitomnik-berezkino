@@ -62,7 +62,7 @@ Template Name: Оформление заказа
 
     <p class="dialog__note">Оставьте заявку и мы свяжемся с Вами в ближайшее время</p>
 
-    <form action="" method="post" id="orderRequest" class="form form--order">
+    <form action="" method="post" id="orderRequest" class="form form--column">
         <div class="form-group">
             <div class="form-row">
                 <label for="phone" class="form__label">
