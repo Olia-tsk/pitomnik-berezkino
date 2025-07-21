@@ -19,7 +19,8 @@
 /wp-trackback.php
 
 wp-content/languages/
-wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/reviews-admin-table.php
 wp-content/themes/twentytwentyfive/
 wp-content/themes/berezkino/assets/css/style.css
 wp-content/themes/berezkino/assets/css/style.min.css
