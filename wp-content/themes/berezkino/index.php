@@ -195,6 +195,27 @@ global $post;
             <button type="submit" class="dialog__button button button--fill">Закрыть</button>
         </form>
     </dialog>
+
+    <dialog id="errorMessage" class="dialog" aria-label="Ошибка при отправке" aria-labelledby="errorMessageHeader">
+        <div id="errorMessageHeader" class="dialog__header">
+            <h2 class="dialog__title dialog__title--error">Что-то пошло не так...</h2>
+            <form class="dialog__close" method="dialog">
+                <button class="dialog__close-btn" type="submit">
+                    <svg class="dialog__close-icon icon">
+                        <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-close"></use>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <p class="dialog__content">
+            При отправке отзыва произошла непредвиденная ошибка. <br> Попробуйте повторить отправку через пару минут или свяжитесь с нами с помощью контактов, указанных внизу сайта.
+        </p>
+
+        <form class="dialog__controls" method="dialog">
+            <button type="submit" class="dialog__button button button--red">Закрыть</button>
+        </form>
+    </dialog>
 </section>
 
 <section class="about">
