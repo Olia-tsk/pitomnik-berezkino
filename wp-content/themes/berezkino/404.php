@@ -14,11 +14,10 @@ Template Name: Страница не найдена
         <h2 class="not-found__subtitle">Страница не найдена</h2>
         <p class="not-found__text">Страница, которую Вы запрашиваете, возможно, перемещена на другой адрес или никогда не существовала.</p>
         <div class="not-found__buttons">
-            <a href="" class="button button--outline">На главную</a>
-            <a href="" class="button button--outline">В каталог</a>
+            <a href="/" class="button button--outline">На главную</a>
+            <a href="<?php bloginfo('url') ?>/categories" class="button button--outline">В каталог</a>
         </div>
     </div>
 </main>
 
 <?php get_footer() ?>
-<!-- background-image: url('https://media.geeksforgeeks.org/wp-content/uploads/20231218224644/w.jpg') -->
