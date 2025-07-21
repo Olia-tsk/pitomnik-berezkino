@@ -200,6 +200,21 @@ function remove_post_custom_fields()
     remove_meta_box('commentsdiv', 'post', 'normal');
 }
 
+// скрываем метки из подменю для типа записи - post
+add_action('admin_menu', 'remove_tags_menu');
+function remove_tags_menu()
+{
+    remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
+}
+
+// скрываем метки из редактора для типа записи - post
+function unregister_tags_for_posts()
+{
+    unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+add_action('init', 'unregister_tags_for_posts');
+
+
 // регистрируем новые типы записей
 add_action('init', 'register_post_types');
 function register_post_types()
