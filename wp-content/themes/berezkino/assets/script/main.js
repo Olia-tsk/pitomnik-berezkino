@@ -557,6 +557,12 @@ jQuery("form").each(function () {
       policy: {
         required: true,
       },
+
+      review: {
+        required: true,
+        minlength: 2,
+        maxlength: 290,
+      },
     },
 
     messages: {
@@ -572,6 +578,12 @@ jQuery("form").each(function () {
 
       policy: {
         required: "Это поле является обязательным",
+      },
+
+      review: {
+        required: "Это поле является обязательным",
+        minlength: "Слишком мало символов",
+        maxlength: "Отзыв не должен превышать 290 символов",
       },
     },
   });
