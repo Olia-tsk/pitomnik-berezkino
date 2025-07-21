@@ -139,7 +139,9 @@ global $post;
             </div>
         </div>
 
-        <!-- <a class="reviews__button button button--outline" href="">Оставить отзыв</a> -->
+        <button id="addReviewButton" class="reviews__button button button--outline" type="button" onclick="addReview.showModal()">
+            Оставить отзыв
+        </button>
     </div>
 
     <dialog id="addReview" class="dialog dialog" aria-label="Отправить отзыв" aria-labelledby="sendReviewHeader">
