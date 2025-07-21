@@ -141,6 +141,40 @@ global $post;
 
         <!-- <a class="reviews__button button button--outline" href="">Оставить отзыв</a> -->
     </div>
+
+    <dialog id="addReview" class="dialog dialog" aria-label="Отправить отзыв" aria-labelledby="sendReviewHeader">
+        <div id="sendReviewHeader" class="dialog__header">
+            <h2 class="dialog__title">Оставить отзыв</h2>
+            <form class="dialog__close" method="dialog">
+                <button class="dialog__close-btn" type="submit">
+                    <svg class="dialog__close-icon icon">
+                        <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-close"></use>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <form action="" method="post" id="reviewForm" class="form form--column">
+            <div class="form-group form-group--column">
+                <label for="name" class="form__label">
+                    Имя:
+                </label>
+                <input type="text" name="name" id="name" minlength="2" required>
+            </div>
+
+            <div class="form-group form-group--column">
+                <label for="review" class="form__label">
+                    Текст отзыва:
+                </label>
+                <textarea name="review" id="review" minlength="2" required></textarea>
+            </div>
+
+            <input type="hidden" name="checkField" class="checkField">
+
+            <button type="submit" class="form__button button button--fill" id="sendReviewButton">Отправить</button>
+        </form>
+    </dialog>
+
 </section>
 
 <section class="about">
