@@ -25,7 +25,7 @@ Template Name: Оформление заказа
                     <p class="order__submit-items"></p>
                     <p class="order__submit-summ"></p>
                 </div>
-                <button id="orderButton" class="order__button button button--fill" type="button" onclick="sendOrder.showModal()">Перейти к оформлению</button>
+                <button id="orderButton" class="order__button button button--fill" type="button" onclick="sendOrder.showModal()" disabled>Перейти к оформлению</button>
             </div>
         </form>
     </div>
