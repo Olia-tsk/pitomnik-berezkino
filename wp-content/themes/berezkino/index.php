@@ -144,7 +144,7 @@ global $post;
         </button>
     </div>
 
-    <dialog id="addReview" class="dialog dialog" aria-label="Отправить отзыв" aria-labelledby="sendReviewHeader">
+    <dialog id="addReview" class="dialog dialog" aria-label="Отправить отзыв" aria-labelledby="sendReviewHeader" closedby="any">
         <div id="sendReviewHeader" class="dialog__header">
             <h2 class="dialog__title">Оставить отзыв</h2>
             <form class="dialog__close" method="dialog">
@@ -177,7 +177,7 @@ global $post;
         </form>
     </dialog>
 
-    <dialog id="successMessage" class="dialog" aria-label="Отзыв успешно отправлен" aria-labelledby="successMessageHeader">
+    <dialog id="successMessage" class="dialog" aria-label="Отзыв успешно отправлен" aria-labelledby="successMessageHeader" closedby="any">
         <div id="successMessageHeader" class="dialog__header">
             <h2 class="dialog__title dialog__title--success">Отзыв успешно отправлен</h2>
             <form class="dialog__close" method="dialog">
@@ -198,7 +198,7 @@ global $post;
         </form>
     </dialog>
 
-    <dialog id="errorMessage" class="dialog" aria-label="Ошибка при отправке" aria-labelledby="errorMessageHeader">
+    <dialog id="errorMessage" class="dialog" aria-label="Ошибка при отправке" aria-labelledby="errorMessageHeader" closedby="any">
         <div id="errorMessageHeader" class="dialog__header">
             <h2 class="dialog__title dialog__title--error">Что-то пошло не так...</h2>
             <form class="dialog__close" method="dialog">

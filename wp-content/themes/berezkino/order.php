@@ -31,7 +31,7 @@ Template Name: Оформление заказа
     </div>
 </main>
 
-<dialog id="confirmDeleteItem" class="dialog" aria-label="Подтвердить удаление товара" aria-labelledby="deleteConfirmationHeader">
+<dialog id="confirmDeleteItem" class="dialog" aria-label="Подтвердить удаление товара" aria-labelledby="deleteConfirmationHeader" closedby="any">
     <div id="deleteConfirmationHeader" class="dialog__header">
         <h2 class="dialog__title">Удаление товара</h2>
         <form class="dialog__close" method="dialog">
@@ -51,7 +51,7 @@ Template Name: Оформление заказа
     </form>
 </dialog>
 
-<dialog id="sendOrder" class="dialog dialog--order" aria-label="Отправить заявку" aria-labelledby="sendOrderConfirmationHeader">
+<dialog id="sendOrder" class="dialog dialog--order" aria-label="Отправить заявку" aria-labelledby="sendOrderConfirmationHeader" closedby="any">
     <div id="sendOrderConfirmationHeader" class="dialog__header">
         <h2 class="dialog__title">Оформление</h2>
         <form class="dialog__close" method="dialog">
@@ -119,7 +119,7 @@ Template Name: Оформление заказа
     </form>
 </dialog>
 
-<dialog id="successMessage" class="dialog" aria-label="Заявка успешно отправлена" aria-labelledby="successMessageHeader">
+<dialog id="successMessage" class="dialog" aria-label="Заявка успешно отправлена" aria-labelledby="successMessageHeader" closedby="any">
     <div id="successMessageHeader" class="dialog__header">
         <h2 class="dialog__title">Оформление</h2>
         <form class="dialog__close" method="dialog">
@@ -138,7 +138,7 @@ Template Name: Оформление заказа
     </form>
 </dialog>
 
-<dialog id="errorMessage" class="dialog" aria-label="Ошибка при отправке" aria-labelledby="errorMessageHeader">
+<dialog id="errorMessage" class="dialog" aria-label="Ошибка при отправке" aria-labelledby="errorMessageHeader" closedby="any">
     <div id="errorMessageHeader" class="dialog__header">
         <h2 class="dialog__title">Оформление</h2>
         <form class="dialog__close" method="dialog">
