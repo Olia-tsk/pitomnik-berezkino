@@ -5,6 +5,8 @@
     background: #FFFFFF
     border: 1px solid #ECECEC
     border-radius: 8px
+    &:focus-visible
+      outline: 2px solid $base-color
     &[type="number"]
       padding: 0 8px
       font-size: 14px
@@ -48,8 +50,11 @@
     color: #cf000f
     font-size: 12px
     order: 1
-  & input.error
+  & input.error,
+  & textarea.error
     border-color: #cf000f
+    &:focus-visible
+      outline: 1px solid #cf000f
 
 .form-group
   display: flex
