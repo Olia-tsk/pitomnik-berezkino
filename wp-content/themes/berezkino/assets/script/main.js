@@ -251,6 +251,7 @@ if (document.querySelector("main.order")) {
         countTotalSum();
         saveChangesToLocalstorage(localStorageKey, item);
         updateCartBadge();
+        checkOrderButtonDisabledAttr();
       });
 
       valueBtns.forEach((button) => {
@@ -269,6 +270,7 @@ if (document.querySelector("main.order")) {
           countTotalSum();
           saveChangesToLocalstorage(localStorageKey, item);
           updateCartBadge();
+          checkOrderButtonDisabledAttr();
         });
       });
     });
@@ -276,6 +278,7 @@ if (document.querySelector("main.order")) {
     countItems();
     countTotalSum();
     updateCartBadge();
+    checkOrderButtonDisabledAttr();
   });
 
   // показываем модальное окно для отправки заявки
@@ -492,6 +495,15 @@ function fillOrderItemsHiddenField() {
     amount: item.amount,
   }));
   document.getElementById("orderContent").value = JSON.stringify(items);
+}
+
+function checkOrderButtonDisabledAttr() {
+  const orderButton = document.getElementById("orderButton");
+  let items = document.querySelector(".order__submit-items").textContent;
+
+  items = parseInt(items);
+
+  items > 0 ? orderButton.removeAttribute("disabled") : orderButton.setAttribute("disabled", true);
 }
 
 updateCartBadge();
