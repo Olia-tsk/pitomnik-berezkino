@@ -539,10 +539,8 @@ jQuery("#orderRequest").on("submit", function (e) {
         CartStorage.removeAll();
         updateCartBadge();
         refreshOrderItems();
-        console.log(response);
       } else {
         errorMessageModal.showModal();
-        console.log(response);
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {
@@ -637,4 +635,14 @@ jQuery("form").each(function () {
       },
     },
   });
+});
+
+// следим за модальными окнами, убираем скролл если открыли модалку, возвращаем если закрыли
+const observer = new MutationObserver(() => {
+  const anyOpen = Array.from(document.querySelectorAll("dialog")).some((dialog) => dialog.open);
+  document.body.style.overflow = anyOpen ? "hidden" : "unset";
+});
+
+document.querySelectorAll("dialog").forEach((dialog) => {
+  observer.observe(dialog, { attributes: true, attributeFilter: ["open"] });
 });
