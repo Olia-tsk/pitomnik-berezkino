@@ -163,6 +163,29 @@ function getCatPosts($current_cat_id)
     return $cat_posts;
 }
 
+// скрываем ненужные пункты меню
+add_action('admin_menu', 'remove_admin_menu');
+function remove_admin_menu()
+{
+    // скрываем пункт меню комментарии для всех
+    remove_menu_page('edit-comments.php');
+    if (!current_user_can('manage_options')) {
+        // скрываем пункт меню инструмены и страницы для всех кроме админа
+        remove_menu_page('tools.php');
+        remove_menu_page('edit.php?post_type=page');
+    }
+}
+
+// скрываем ненужные виджеты из админки для всех кроме админа
+function remove_dashboard_meta()
+{
+    if (!current_user_can('manage_options')) {
+        remove_meta_box('dashboard_primary', 'dashboard', 'normal');
+        remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+    }
+}
+add_action('admin_init', 'remove_dashboard_meta');
+
 // изменяем названия типа записи - post
 add_filter('register_post_type_args', 'filter_register_post_type_args', 10, 2);
 function filter_register_post_type_args($args, $post_type)
@@ -207,11 +230,11 @@ function remove_tags_menu()
 }
 
 // скрываем метки из редактора для типа записи - post
+add_action('init', 'unregister_tags_for_posts');
 function unregister_tags_for_posts()
 {
     unregister_taxonomy_for_object_type('post_tag', 'post');
 }
-add_action('init', 'unregister_tags_for_posts');
 
 
 // регистрируем новые типы записей
