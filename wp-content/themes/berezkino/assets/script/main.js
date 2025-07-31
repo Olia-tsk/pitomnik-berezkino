@@ -273,8 +273,8 @@ if (document.querySelector("main.order")) {
     };
 
     jQuery(document)
-      .off("click", "#deleteItem")
-      .on("click", "#deleteItem", function (e) {
+      .off("click", ".delete-this-item")
+      .on("click", ".delete-this-item", function (e) {
         e.preventDefault();
         const deleteModal = document.getElementById("confirmDeleteItem");
         deleteModal.showModal();
