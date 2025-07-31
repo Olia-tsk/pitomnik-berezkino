@@ -83,6 +83,28 @@ const addToCartToastWarning = Toastify({
   },
 });
 
+const deleteFromOrderToast = Toastify({
+  text: "Саженец успешно удален из Вашего заказа",
+  duration: 3000,
+  close: true,
+  gravity: "bottom",
+  position: "left",
+  stopOnFocus: true,
+  style: {
+    padding: "15px 30px",
+    "padding-right": "20px",
+    display: "flex",
+    "column-gap": "5px",
+    "flex-direction": "row-reverse",
+    "justify-content": "center",
+    "border-radius": "12px",
+    background: "#197606",
+    "font-size": "18px",
+    "font-weight": 600,
+  },
+});
+
+
 const section = document.querySelector("section");
 const body = document.querySelector("body");
 const burger = document.getElementById("burgerBtn");
