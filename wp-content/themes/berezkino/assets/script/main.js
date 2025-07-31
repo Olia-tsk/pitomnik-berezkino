@@ -159,12 +159,16 @@ if (document.getElementById("addToOrder")) {
       addToCartToastWarning.showToast();
       return;
     }
+
+    if (!amountWarning && order.length > 0) {
+      addToCartToast.showToast();
+    }
+
     order.forEach((item) => {
       localStorage.setItem(item.key, JSON.stringify([item]));
     });
 
     updateCartBadge();
-    addToCartToast.showToast();
   });
 
   // восстанавливаем данные если пользователь перезагрузил страницу
