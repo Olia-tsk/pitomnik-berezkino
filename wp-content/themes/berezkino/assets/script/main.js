@@ -104,6 +104,43 @@ const deleteFromOrderToast = Toastify({
   },
 });
 
+// имитация closedby="any" для кроссбраузерности
+document.querySelectorAll("dialog").forEach((dialog) => {
+  dialog.addEventListener("click", function (e) {
+    if (e.target.tagName !== "DIALOG") return;
+
+    const dialogId = e.currentTarget.id;
+    const rect = e.target.getBoundingClientRect();
+    const clickedInDialog =
+      rect.top <= e.clientY && e.clientY <= rect.top + rect.height && rect.left <= e.clientX && e.clientX <= rect.left + rect.width;
+
+    if (clickedInDialog === false && dialogId === "confirmDeleteItem") {
+      let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
+      currentItemForDelete.querySelector("input[name=amount]").value = 1;
+      saveChangesToLocalstorage(localStorageKey, currentItemForDelete);
+      refreshOrderItems();
+      updateCartBadge();
+      currentItemForDelete = null;
+    }
+
+    if (clickedInDialog === false) e.target.close();
+  });
+
+  dialog.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (dialog.id === "confirmDeleteItem" && currentItemForDelete) {
+        let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
+        currentItemForDelete.querySelector("input[name=amount]").value = 1;
+        saveChangesToLocalstorage(localStorageKey, currentItemForDelete);
+        refreshOrderItems();
+        updateCartBadge();
+        currentItemForDelete = null;
+      }
+
+      dialog.close();
+    }
+  });
+});
 
 const section = document.querySelector("section");
 const body = document.querySelector("body");
