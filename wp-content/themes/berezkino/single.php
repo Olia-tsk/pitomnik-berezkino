@@ -48,7 +48,7 @@ $product_variants = carbon_get_the_post_meta('product_item');
                                         -
                                     </button>
 
-                                    <input type="number" name="amount" id="<?= $key ?>" min="0" value="0" inputmode="numeric" />
+                                    <input type="number" name="amount" id="<?= $key ?>" min="0" value="1" inputmode="numeric" />
 
                                     <button
                                         class="form-group__btn form-group__btn--minus"
