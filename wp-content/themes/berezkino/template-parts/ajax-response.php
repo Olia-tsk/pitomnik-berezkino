@@ -26,7 +26,7 @@
                 <p class="form-row__content-desc"><?= $item->data ?></p>
             </div>
             <div class="form-row__right">
-                <button id="deleteItem" type="button" class="form-row__right-btn" onclick="confirmDeleteItem.showModal()">
+                <button type="button" class="form-row__right-btn delete-this-item" onclick="confirmDeleteItem.showModal()">
                     <svg class="svg-icon">
                         <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-trash"></use>
                     </svg>
