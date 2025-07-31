@@ -10,6 +10,9 @@ Container::make('theme_options', 'Прайсы')
         Field::make('html', 'information_text')
             ->set_html('<h2 class="information-warning">После загрузки прайсов, не забудьте нажать кнопку "Сохранить изменения".</h2>'),
 
+        Field::make('text', 'price_period', 'Актуальность прайса')
+            ->help_text('Например: Весна 2025'),
+
         Field::make('file', 'price_full', 'Полный прайс')
             ->set_type(array('application/pdf', 'application/excel')),
 
