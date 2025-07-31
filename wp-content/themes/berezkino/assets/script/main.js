@@ -282,37 +282,6 @@ if (document.querySelector("main.order")) {
       }
     };
 
-    // не удаляем саженец и сохраняем кол-во = 1, если кликнули мимо экрана
-    deleteModal.onclick = function (e) {
-      const rect = deleteModal.getBoundingClientRect();
-      if (e.clientY < rect.top || e.clientY > rect.bottom || e.clientY < rect.left || e.clientY > rect.right) {
-        if (currentItemForDelete) {
-          let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
-          currentItemForDelete.querySelector("input[name=amount]").value = 1;
-          saveChangesToLocalstorage(localStorageKey, currentItemForDelete);
-          refreshOrderItems();
-          updateCartBadge();
-          deleteModal.close();
-          currentItemForDelete = null;
-        }
-      }
-    };
-
-    // не удаляем саженец и сохраняем кол-во = 1, если нажали esc
-    document.onkeydown = function (e) {
-      if (e.key === "Escape") {
-        if (currentItemForDelete) {
-          let localStorageKey = currentItemForDelete.querySelector("input[name=itemKey]").value;
-          currentItemForDelete.querySelector("input[name=amount]").value = 1;
-          saveChangesToLocalstorage(localStorageKey, currentItemForDelete);
-          refreshOrderItems();
-          updateCartBadge();
-          deleteModal.close();
-          currentItemForDelete = null;
-        }
-      }
-    };
-
     jQuery(document)
       .off("click", ".delete-this-item")
       .on("click", ".delete-this-item", function (e) {
