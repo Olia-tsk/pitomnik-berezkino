@@ -285,6 +285,7 @@ if (document.querySelector("main.order")) {
           deleteItem(localStorageKey);
           updateCartBadge();
           deleteModal.close();
+          deleteFromOrderToast.showToast();
         };
       });
 
