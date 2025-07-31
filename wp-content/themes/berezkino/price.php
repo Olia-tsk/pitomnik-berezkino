@@ -20,7 +20,9 @@ Template Name: Прайс листы
                     культуры
                 </p>
                 <div class="price__item-col">
-                    <span>Март 2025</span>
+                    <span>
+                        <?= carbon_get_theme_option('price_period') ?>
+                    </span>
                     <p class="price__item-download">
                         <svg class="svg-icon">
                             <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-download"></use>
@@ -35,7 +37,9 @@ Template Name: Прайс листы
                     Растения
                 </p>
                 <div class="price__item-col">
-                    <span>Март 2025</span>
+                    <span>
+                        <?= carbon_get_theme_option('price_period') ?>
+                    </span>
                     <p class="price__item-download">
                         <svg class="svg-icon">
                             <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-download"></use>
@@ -50,7 +54,9 @@ Template Name: Прайс листы
                     кустарники
                 </p>
                 <div class="price__item-col">
-                    <span>Март 2025</span>
+                    <span>
+                        <?= carbon_get_theme_option('price_period') ?>
+                    </span>
                     <p class="price__item-download">
                         <svg class="svg-icon">
                             <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-download"></use>
@@ -62,7 +68,9 @@ Template Name: Прайс листы
             <a class="price__item" href="<?= wp_get_attachment_url(carbon_get_theme_option('price_lianas')) ?>" download="">
                 <p class="price__item-title">Лианы</p>
                 <div class="price__item-col">
-                    <span>Март 2025</span>
+                    <span>
+                        <?= carbon_get_theme_option('price_period') ?>
+                    </span>
                     <p class="price__item-download">
                         <svg class="svg-icon">
                             <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-download"></use>
@@ -77,7 +85,9 @@ Template Name: Прайс листы
                     деревья
                 </p>
                 <div class="price__item-col">
-                    <span>Март 2025</span>
+                    <span>
+                        <?= carbon_get_theme_option('price_period') ?>
+                    </span>
                     <p class="price__item-download">
                         <svg class="svg-icon">
                             <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-download"></use>
@@ -91,7 +101,9 @@ Template Name: Прайс листы
                     Полный прайс
                 </p>
                 <div class="price__item-col">
-                    <span>Март 2025</span>
+                    <span>
+                        <?= carbon_get_theme_option('price_period') ?>
+                    </span>
                     <p class="price__item-download">
                         <svg class="svg-icon">
                             <use xlink:href="<?php bloginfo('template_url') ?>/assets/images/sprite.svg#icon-download"></use>
