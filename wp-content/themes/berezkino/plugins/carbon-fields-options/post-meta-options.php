@@ -37,5 +37,6 @@ Container::make('post_meta', 'Подробная информация')
                 Field::make('text', 'product_item_price', __('Цена, руб'))
             )),
 
-        Field::make('image', 'product_item_image', __('Фото саженца')),
+        Field::make('media_gallery', 'product_item_images', __('Фотографии саженца'))
+            ->set_type('image'),
     ));
