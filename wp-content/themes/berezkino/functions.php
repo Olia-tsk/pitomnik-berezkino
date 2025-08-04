@@ -66,6 +66,7 @@ function custom_posts_columns($columns)
     $columns['plant_height'] = 'Высота, см';
     $columns['plant_size'] =  'Объём, л';
     $columns['plant_diameter'] = 'Диаметр, м';
+    $columns['plant_vaccination'] = 'Прививка';
     $columns['plant_price'] = 'Цена, ₽/шт';
 
     // Можно переставить порядок колонок, создав новый массив
@@ -77,9 +78,8 @@ function custom_posts_columns($columns)
         'plant_height' => $columns['plant_height'],
         'plant_size' => $columns['plant_size'],
         'plant_diameter' => $columns['plant_diameter'],
+        'plant_vaccination' => $columns['plant_vaccination'],
         'plant_price' => $columns['plant_price'],
-        'date' => $columns['date'], // Дата
-
     );
 
     return $new_columns;
@@ -114,6 +114,11 @@ function custom_posts_column_content($column_name, $post_id)
     if ($column_name == 'plant_price') {
         foreach ($plant_data as $item) {
             echo $item['product_item_price'] . "<br>";
+        }
+    }
+    if ($column_name == 'plant_vaccination') {
+        foreach ($plant_data as $item) {
+            echo $item['product_item_vaccination'] . "<br>";
         }
     }
 }
