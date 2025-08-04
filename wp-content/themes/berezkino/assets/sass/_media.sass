@@ -197,7 +197,7 @@
     &__variants
       & li
         font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1250 - 375)))
-    &__image
+    &__images
       width: 50%
   .categories-page.categories
     & .categories
@@ -366,13 +366,10 @@
     row-gap: 24px
     &__content
       width: 100%
-    &__image
-      position: unset
+    &__images
       width: 100%
       height: calc(185px + (400 - 185) * ((100vw - 375px) / (876 - 375)))
       min-height: 250px
-      & > img
-        position: unset
   .sidebar
     display: none
   .footer
@@ -491,7 +488,8 @@
           width: calc(75% + (65 - 75) * ((100vw - 375px) / (576 - 375)))
   .product-item
     &__button
-      max-width: unset
+      width: 100%
+      max-width: 350px
   .subcategories
     &__wrapper
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))

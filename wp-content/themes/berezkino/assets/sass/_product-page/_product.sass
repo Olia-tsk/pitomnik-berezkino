@@ -93,16 +93,53 @@
     max-width: 250px
     min-width: 211px
     flex-grow: 1
-  &__image
-    position: relative
-    width: 45%
-    max-height: 650px
-    min-height: 300px
-    border-radius: 24px
-    overflow: hidden
     & > img
       position: absolute
       height: 100%
       width: 100%
       object-fit: cover
       object-position: center
+  &__images
+    position: relative
+    width: 45%
+    max-height: 650px
+    min-height: 300px
+    &:has(.f-thumbs)
+      padding-bottom: 88px
+
+    & img
+      width: 100%
+      height: auto
+      max-height: 100%
+      object-fit: cover
+      object-position: center
+    & .f-carousel__slide
+      display: flex
+      align-items: stretch
+      justify-content: center
+      & img
+        border-radius: 24px
+    & .f-carousel__viewport
+      cursor: zoom-in
+    & .f-thumbs
+      position: absolute
+      left: 0
+      right: 0
+  &__warning
+    font-size: 14px
+    font-style: italic
+    color: #808080
+
+#productItemGallery
+  --f-arrow-pos: 10px
+  --f-arrow-bg: rgba(255,255,255,0.75)
+  --f-arrow-hover-bg: rgba(255,255,255,1)
+  --f-arrow-color: #333
+  --f-arrow-width: 40px
+  --f-arrow-height: 40px
+  --f-arrow-svg-width: 20px
+  --f-arrow-svg-height: 20px
+  --f-arrow-svg-stroke-width: 2px
+  --f-arrow-border-radius: 50%
+
+  height: 100%
