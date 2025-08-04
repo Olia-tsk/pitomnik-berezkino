@@ -83,6 +83,13 @@ Template Name: Оформление заказа
         </div>
 
         <div class="form-group form-group--column">
+            <label for="email" class="form__label">
+                Email:
+            </label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div class="form-group form-group--column">
             <label for="comment" class="form__label">
                 Комментарий к заказу:
             </label>
