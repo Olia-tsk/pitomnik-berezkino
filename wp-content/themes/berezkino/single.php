@@ -2,7 +2,7 @@
 $parents = wp_get_post_categories(get_the_ID());
 $closestParent = $parents[0];
 $parentName = get_cat_name($closestParent);
-$image_url = wp_get_attachment_url(carbon_get_the_post_meta('product_item_image'));
+$gallery = carbon_get_the_post_meta('product_item_images');
 $product_variants = carbon_get_the_post_meta('product_item');
 ?>
 
@@ -93,9 +93,27 @@ $product_variants = carbon_get_the_post_meta('product_item');
                 <?php endif ?>
             </div>
 
-            <div class="product-item__image">
-                <img src="<?= $image_url ?>" alt="Фото саженца" />
-            </div>
+            <?php if ($gallery) : ?>
+                <div class="product-item__images">
+                    <div class="f-carousel" id="productItemGallery">
+                        <?php foreach ($gallery as $image_id): ?>
+                            <div
+                                class="f-carousel__slide"
+                                data-fancybox="gallery"
+                                data-src="<?= wp_get_attachment_url($image_id) ?>"
+                                data-thumb-src="<?= wp_get_attachment_thumb_url($image_id) ?>">
+
+                                <img
+                                    class="product-item__image"
+                                    data-lazy-src="<?= wp_get_attachment_url($image_id) ?>"
+                                    alt="Фото саженца" />
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php else: ?>
+                <p class="product-item__warning">Фото саженца еще не загружено</p>
+            <?php endif; ?>
         </div>
     </div>
 </main>
