@@ -401,6 +401,8 @@ function send_order_to_telegram_callback()
 
         $name = isset($_POST['name']) && !empty($_POST['name']) ? htmlspecialchars($_POST['name']) : "error";
 
+        $email = isset($_POST['email']) && !empty($_POST['email']) ? htmlspecialchars($_POST['email']) : "error";
+
         $comment = isset($_POST['comment']) && !empty($_POST['comment']) ? htmlspecialchars($_POST['comment']) : "Комментарий не указан";
 
         $orderContentRaw = isset($_POST['orderContent']) ? wp_unslash($_POST['orderContent']) : '';
@@ -431,6 +433,7 @@ function send_order_to_telegram_callback()
         $messageData = array(
             'Имя:' => $name,
             'Телефон:' => $phone,
+            'Email:' => $email,
             'Комментарий к заказу:' => $comment,
             'Состав заказа:' => $orderList,
             'Общее количество:' => $totalItemsAmount,
