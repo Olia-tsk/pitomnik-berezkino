@@ -173,7 +173,9 @@ if (document.getElementById("addToOrder")) {
   const itemName =
     document.querySelector(".product-item__subtitle").textContent + " " + document.querySelector(".product-item__title").textContent;
   const type = document.getElementById("itemType").name;
-  const imgUrl = document.querySelector(".product-item__image").getElementsByTagName("img")[0].src;
+  const imgUrl = document.querySelector(".product-item__image")
+    ? document.querySelector(".product-item__image").getAttribute("data-lazy-src")
+    : "";
   const itemUrl = document.getElementById("itemUrl").value;
 
   const items = document.querySelectorAll(".form-row__checkbox");
