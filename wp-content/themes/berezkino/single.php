@@ -30,65 +30,67 @@ $product_variants = carbon_get_the_post_meta('product_item');
                     <?= apply_filters('the_content', carbon_get_the_post_meta('product_item_desc')); ?>
                 </div>
 
-                <h4 class="product-item__variants-title">Доступные варианты:</h4>
+                <?php if (carbon_get_the_post_meta('product_available')): ?>
+                    <h4 class="product-item__variants-title">Доступные варианты:</h4>
 
-                <form class="product-item__form form" action="" method="post">
-                    <input id="itemType" type="hidden" name="<?= get_post()->post_name ?>">
-                    <input id="itemUrl" type="hidden" name="itemUrl" value="<?php the_permalink() ?>">
+                    <form class="product-item__form form" action="" method="post">
+                        <input id="itemType" type="hidden" name="<?= get_post()->post_name ?>">
+                        <input id="itemUrl" type="hidden" name="itemUrl" value="<?php the_permalink() ?>">
 
-                    <div class="form-group form-group--column">
-                        <?php foreach ($product_variants as $key => $item): ?>
-                            <div class="form-row">
-                                <input class="form-row__checkbox" type="checkbox" name="plant" id="<?= $key ?>">
-                                <div class="form-row__controls">
-                                    <button
-                                        class="form-group__btn form-group__btn--minus"
-                                        type="button"
-                                        onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange;">
-                                        -
-                                    </button>
+                        <div class="form-group form-group--column">
+                            <?php foreach ($product_variants as $key => $item): ?>
+                                <div class="form-row">
+                                    <input class="form-row__checkbox" type="checkbox" name="plant" id="<?= $key ?>">
+                                    <div class="form-row__controls">
+                                        <button
+                                            class="form-group__btn form-group__btn--minus"
+                                            type="button"
+                                            onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange;">
+                                            -
+                                        </button>
 
-                                    <input type="number" name="amount" id="<?= $key ?>" min="0" value="1" inputmode="numeric" />
+                                        <input type="number" name="amount" id="<?= $key ?>" min="0" value="1" inputmode="numeric" />
 
-                                    <button
-                                        class="form-group__btn form-group__btn--minus"
-                                        type="button"
-                                        onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange;">
-                                        +
-                                    </button>
+                                        <button
+                                            class="form-group__btn form-group__btn--minus"
+                                            type="button"
+                                            onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange;">
+                                            +
+                                        </button>
+                                    </div>
+                                    <label class="form-row__label" for="<?= $key ?>">
+                                        <?php if ($item['product_item_age']): ?>
+                                            <span><b>Возраст:</b> <?= $item['product_item_age'] ?>;</span>
+                                        <?php endif; ?>
+
+                                        <?php if ($item['product_item_height']): ?>
+                                            <span><b>Высота:</b> <?= $item['product_item_height'] ?> см;</span>
+                                        <?php endif; ?>
+
+                                        <?php if ($item['product_item_size']): ?>
+                                            <span><b>Объём:</b> <?= $item['product_item_size'] ?>;</span>
+                                        <?php endif; ?>
+
+                                        <?php if ($item['product_item_diameter']): ?>
+                                            <span><b>Диаметр кома:</b> <?= $item['product_item_diameter'] ?> м;</span>
+                                        <?php endif; ?>
+
+                                        <?php if ($item['product_item_vaccination']): ?>
+                                            <span><b>Прививка:</b> <?= $item['product_item_vaccination'] ?>;</span>
+                                        <?php endif; ?>
+
+                                        <?php if ($item['product_item_price']): ?>
+                                            <span><b>Цена:</b> <?= $item['product_item_price'] ?> р/шт;</span>
+                                        <?php endif; ?>
+                                    </label>
+                                    <input class="form-row__item-price" type="hidden" name="<?= $item['product_item_price'] ?>">
                                 </div>
-                                <label class="form-row__label" for="<?= $key ?>">
-                                    <?php if ($item['product_item_age']): ?>
-                                        <span><b>Возраст:</b> <?= $item['product_item_age'] ?>;</span>
-                                    <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
 
-                                    <?php if ($item['product_item_height']): ?>
-                                        <span><b>Высота:</b> <?= $item['product_item_height'] ?> см;</span>
-                                    <?php endif; ?>
-
-                                    <?php if ($item['product_item_size']): ?>
-                                        <span><b>Объём:</b> <?= $item['product_item_size'] ?>;</span>
-                                    <?php endif; ?>
-
-                                    <?php if ($item['product_item_diameter']): ?>
-                                        <span><b>Диаметр кома:</b> <?= $item['product_item_diameter'] ?> м;</span>
-                                    <?php endif; ?>
-
-                                    <?php if ($item['product_item_vaccination']): ?>
-                                        <span><b>Прививка:</b> <?= $item['product_item_vaccination'] ?>;</span>
-                                    <?php endif; ?>
-
-                                    <?php if ($item['product_item_price']): ?>
-                                        <span><b>Цена:</b> <?= $item['product_item_price'] ?> р/шт;</span>
-                                    <?php endif; ?>
-                                </label>
-                                <input class="form-row__item-price" type="hidden" name="<?= $item['product_item_price'] ?>">
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <button id="addToOrder" class="product-item__button button button--fill" type="button">Добавить в заказ</button>
-                </form>
+                        <button id="addToOrder" class="product-item__button button button--fill" type="button">Добавить в заказ</button>
+                    </form>
+                <?php endif ?>
             </div>
 
             <div class="product-item__image">
