@@ -41,7 +41,7 @@ $parents = get_ancestors($current_cat->cat_ID, 'category');
                         <?php foreach ($cat_posts as $post): ?>
                             <a href="<?php the_permalink() ?>" class="subcategories__item">
                                 <div class="subcategories__item-img">
-                                    <img src="<?= wp_get_attachment_url(carbon_get_post_meta(get_the_ID(), 'product_item_image')); ?>" alt="Фото саженца" />
+                                    <img src="<?= wp_get_attachment_url(carbon_get_post_meta(get_the_ID(), 'product_item_images')[0]); ?>" alt="Фото саженца" />
                                 </div>
                                 <span><?= $post->post_title ?></span>
                             </a>
