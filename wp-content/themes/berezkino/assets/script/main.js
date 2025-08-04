@@ -39,6 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     articlesSlider.mount();
   }
+
+  if (document.getElementById("productItemGallery")) {
+    Carousel(
+      document.getElementById("productItemGallery"),
+      {
+        slidesPerPage: 1,
+      },
+      {
+        Lazyload,
+        Arrows,
+        Thumbs,
+      }
+    ).init();
+
+    Fancybox.bind("[data-fancybox]");
+  }
 });
 
 const addToCartToast = Toastify({
