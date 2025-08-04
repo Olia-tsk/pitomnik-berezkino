@@ -182,6 +182,7 @@ function remove_admin_menu()
 }
 
 // скрываем ненужные виджеты из админки для всех кроме админа
+add_action('admin_init', 'remove_dashboard_meta');
 function remove_dashboard_meta()
 {
     if (!current_user_can('manage_options')) {
@@ -189,7 +190,6 @@ function remove_dashboard_meta()
         remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
     }
 }
-add_action('admin_init', 'remove_dashboard_meta');
 
 // изменяем названия типа записи - post
 add_filter('register_post_type_args', 'filter_register_post_type_args', 10, 2);
