@@ -12,6 +12,8 @@ add_action('wp_enqueue_scripts', function () {
     // подключение стилей
     wp_enqueue_style('splide', get_template_directory_uri() . '/assets/css/splide.min.css');
     wp_enqueue_style('toastify', 'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css', array(), '1.12');
+    wp_enqueue_style('fancybox', get_template_directory_uri() . '/assets/css/fancybox.css', array(), '6.0');
+    wp_enqueue_style('carousel', get_template_directory_uri() . '/assets/css/carousel.css', array(), '6.0');
     wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0');
 
     // подключение скриптов
@@ -19,6 +21,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('toastify', 'https://cdn.jsdelivr.net/npm/toastify-js', array(), '1.12', true);
     wp_enqueue_script('validate', get_template_directory_uri() . '/assets/script/jquery.validate.min.js', array(), '1.19', true);
     wp_enqueue_script('mask', get_template_directory_uri() . '/assets/script/jquery.mask.min.js', array(), '1.14', true);
+    wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/script/fancybox.umd.js', array(), '6.0', true);
+    wp_enqueue_script('carousel', get_template_directory_uri() . '/assets/script/carousel.umd.js', array(), '6.0', true);
     wp_enqueue_script('main', get_template_directory_uri() . '/assets/script/main.js', array('jquery'), '1.0', true);
 
     wp_localize_script('main', 'ajax', array(
