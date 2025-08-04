@@ -16,6 +16,11 @@ Container::make('post_meta', 'Подробная информация')
         Field::make('rich_text', 'product_item_desc', __('Описание'))
             ->set_required(true),
 
+        Field::make('checkbox', 'product_available', 'Есть в наличии')
+            ->set_option_value('true')
+            ->set_default_value('true')
+            ->set_help_text('Если саженец больше не доступен для продажи, просто снимите эту галочку. Варианты товара ниже удалять не обязательно'),
+
         Field::make('complex', 'product_item', __('Варианты товара'))
             ->set_layout('tabbed-vertical')
             ->setup_labels($item_labels)
