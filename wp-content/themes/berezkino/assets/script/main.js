@@ -666,6 +666,11 @@ jQuery("form").each(function () {
         minlength: 15,
       },
 
+      email: {
+        required: true,
+        email: true,
+      },
+
       policy: {
         required: true,
       },
@@ -686,6 +691,11 @@ jQuery("form").each(function () {
       phone: {
         required: "Укажите Ваш номер телефона",
         minlength: jQuery.validator.format("Формат 8 (999) 999-99-99 или (999) 999-99-99"),
+      },
+
+      email: {
+        required: "Укажите Ваш адрес электронной почты, чтобы мы могли отправить Вам информацию о заказе",
+        email: "Некорректный email",
       },
 
       policy: {
