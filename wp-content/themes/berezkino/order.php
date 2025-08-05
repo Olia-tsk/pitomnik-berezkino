@@ -138,7 +138,12 @@ Template Name: Оформление заказа
         </form>
     </div>
 
-    <p class="dialog__content">Заказ успешно доставлен до менеджера</p>
+    <h3>Спасибо!</h3>
+
+    <p class="dialog__content">
+        Заказ успешно доставлен до менеджера. <br>
+        Для Вашего удобства, мы отправили копию заказа Вам на электронную почту.
+    </p>
 
     <form class="dialog__controls" method="dialog">
         <button type="submit" class="dialog__button button button--fill">Завершить</button>
