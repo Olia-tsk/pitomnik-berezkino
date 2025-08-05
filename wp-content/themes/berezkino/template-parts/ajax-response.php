@@ -3,7 +3,12 @@
 <?php else: ?>
     <?php foreach ($order_items as $item): ?>
         <div class="order__form-row form-row">
-            <img src="<?= $item->imgUrl ?>" alt="фото саженца">
+            <?php if ($item->imgUrl): ?>
+                <img src="<?= $item->imgUrl ?>">
+            <?php else: ?>
+                <img src="<?php bloginfo('template_url') ?>/assets/images/icon_plant.svg">
+            <?php endif; ?>
+
             <div class="form-row__content">
                 <a class="form-row__content-title" href="<?= $item->itemUrl ?>"><?= $item->name ?></a>
                 <div class="form-row__amount">
