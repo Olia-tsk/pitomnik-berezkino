@@ -40,7 +40,7 @@
                     </a>
                 </div>
 
-                <p class="header__announce header-top__announce">Старт продаж с 1 мая 2025</p>
+                <p class="header__announce header-top__announce">Старт продаж с 1 мая <?= date('Y') ?></p>
 
                 <div class="header-top__buttons">
                     <a class="header-top__button social-button social-button--green" href="https://wa.me/79539234214">
