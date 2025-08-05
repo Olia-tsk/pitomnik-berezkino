@@ -56,9 +56,24 @@ git clone git@github.com:Olia-tsk/pitomnik-berezkino.git
 Для корректной работы темы рекомендуется установить следующие плагины:
 
 - [Cyr-To-Lat](https://ru.wordpress.org/plugins/cyr2lat/)
+- [WP Mail SMTP](https://ru.wordpress.org/plugins/wp-mail-smtp/)
 - [Permalink Manager Lite](https://ru.wordpress.org/plugins/permalink-manager/) (по желанию)
 - [Carbon fields](https://docs.carbonfields.net/quickstart.html) (уже добавлен в тему и не требует установки через админ.панель)
 - Reviews Admin Table (уже добавлен в тему, необходимо активировать через админ.панель)
+
+Для корректной работы плагина Reviews Admin Table необходимо создать таблицу в базе данных, в которой установлен WordPress:
+
+```
+CREATE TABLE IF NOT EXISTS `wp_reviews` (
+  `review_id` bigint(20) unsigned NOT NULL,
+  `review_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `review_name` text NOT NULL,
+  `review_text` text NOT NULL,
+  `review_status` varchar(24) NOT NULL DEFAULT 'на модерации',
+  `review_type` varchar(20) NOT NULL DEFAULT 'review',
+  `review_approved` varchar(20) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+```
 
 ---
 
