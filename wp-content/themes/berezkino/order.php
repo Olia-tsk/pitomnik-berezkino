@@ -28,6 +28,18 @@ Template Name: Оформление заказа
                 <button id="orderButton" class="order__button button button--fill" type="button" onclick="sendOrder.showModal()" disabled>Перейти к оформлению</button>
             </div>
         </form>
+
+        <div class="order__footer">
+            <p class="order__footer-text">
+                <span>*</span> Информация о саженцах, добавленных в корзину, сохраняется только в том браузере и на том устройстве, на котором Вы начали формировать заказ.
+            </p>
+            <p class="order__footer-text">
+                <span>*</span> Если Вы не отправили заявку сразу, то можете вернуться и продолжить формировать заказ позже.
+            </p>
+            <p class="order__footer-text">
+                <span>*</span> Информация о заказе в корзине хранится в течении 7 дней.
+            </p>
+        </div>
     </div>
 </main>
 
