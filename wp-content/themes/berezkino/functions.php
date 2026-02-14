@@ -185,6 +185,17 @@ function remove_admin_menu()
     }
 }
 
+// удаляем подпункт "Добавить -> страницу", комментарии и лого вордпресс для всех кроме админа
+add_action('admin_bar_menu', 'remove_admin_bar_items', 999);
+function remove_admin_bar_items($admin_bar)
+{
+    if (!current_user_can('manage_options')) {
+        $admin_bar->remove_node('new-page');
+        $admin_bar->remove_node('comments');
+        $admin_bar->remove_node('wp-logo');
+    }
+}
+
 // скрываем ненужные виджеты из админки для всех кроме админа
 add_action('admin_init', 'remove_dashboard_meta');
 function remove_dashboard_meta()
