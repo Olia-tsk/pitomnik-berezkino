@@ -492,6 +492,43 @@ function send_order_to_telegram_callback()
     }
 }
 
+// отправить уведомление про новый отзыв в телеграм
+function send_review_notification_to_telegram($name, $review_text)
+{
+    $message = "<b>Вам поступил новый отзыв!</b> \n";
+
+    $token = defined('TELEGRAM_BOT_TOKEN') ? TELEGRAM_BOT_TOKEN : '';
+    $chat_id = defined('TELEGRAM_CHAT_ID') ? TELEGRAM_CHAT_ID : '';
+
+    $messageData = array(
+        'Отправитель:' => $name,
+        'Текст отзыва:' => $review_text,
+    );
+
+    foreach ($messageData as $key => $value) {
+        $message .= "<b>" . $key . "</b> " . $value . "\n";
+    };
+
+    $message .= "__________\nЧтобы опубликовать или отклонить отзыв, перейдите в админ.панель Вашего сайта";
+
+    $url = "https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text=" . urlencode($message);
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($http_code == 200) {
+        wp_send_json_success(['message' => 'Message has been sent']);
+    } else {
+        wp_send_json_error([
+            'status' => 'fail',
+            'http_code' => $http_code,
+            'response' => $response
+        ]);
+    }
+}
+
 // отправка отзыва в таблицу отзывов
 add_action('wp_ajax_insert_new_review', 'insert_new_review_ajax');
 add_action('wp_ajax_nopriv_insert_new_review', 'insert_new_review_ajax');
