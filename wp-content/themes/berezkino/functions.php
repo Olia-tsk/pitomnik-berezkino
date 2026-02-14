@@ -256,7 +256,6 @@ function unregister_tags_for_posts()
     unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 
-
 // регистрируем новые типы записей
 add_action('init', 'register_post_types');
 function register_post_types()
@@ -375,9 +374,9 @@ function truemisha_no_tinymce_buttons_at_all($html)
     return;
 }
 
+// получаем список саженцев для корзины
 add_action('wp_ajax_get_cart_items', 'get_cart_items_ajax');
 add_action('wp_ajax_nopriv_get_cart_items', 'get_cart_items_ajax');
-
 function get_cart_items_ajax()
 {
     $order_items = [];
@@ -415,9 +414,10 @@ function send_order_by_email($messageData, $email)
 
     wp_mail($email, $subject, $body, $headers);
 }
+
+// отправка заказа в телеграм
 add_action('wp_ajax_send_order_to_telegram', 'send_order_to_telegram_callback');
 add_action('wp_ajax_nopriv_send_order_to_telegram', 'send_order_to_telegram_callback');
-
 function send_order_to_telegram_callback()
 {
     $message = "";
@@ -534,7 +534,6 @@ function send_review_notification_to_telegram($name, $review_text)
 // отправка отзыва в таблицу отзывов
 add_action('wp_ajax_insert_new_review', 'insert_new_review_ajax');
 add_action('wp_ajax_nopriv_insert_new_review', 'insert_new_review_ajax');
-
 function insert_new_review_ajax()
 {
     $reviewName = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : null;
