@@ -469,6 +469,8 @@ function send_order_to_telegram_callback()
             'Общая стоимость:' => $totalSumm,
         );
 
+        send_order_by_email($messageData, $email);
+
         foreach ($messageData as $key => $value) {
             $message .= "<b>" . $key . "</b> " . $value . "\n";
         };
@@ -542,6 +544,9 @@ function insert_new_review_ajax()
 
         global $wpdb;
         $wpdb->insert('wp_reviews', ['review_name' => $reviewName, 'review_text' => $reviewText]);
+
+        // отправляем уведомление в телеграм
+        send_review_notification_to_telegram($reviewName, $reviewText);
 
         $result = 'success';
         wp_send_json_success($result);
