@@ -401,6 +401,20 @@ function get_cart_items_ajax()
     wp_send_json_success(['html' => $html]);
 }
 
+// отправка заказа на почту
+function send_order_by_email($messageData, $email)
+{
+    if (!$email || $email === 'error') return;
+
+    $subject = 'Ваш заказ на сайте pitomnik-berezkino70.ru';
+    $body = '';
+    foreach ($messageData as $key => $value) {
+        $body .= "<b>" . $key . "</b>" . " " . str_replace("\n", "<br>", $value) . "<br>";
+    }
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+
+    wp_mail($email, $subject, $body, $headers);
+}
 add_action('wp_ajax_send_order_to_telegram', 'send_order_to_telegram_callback');
 add_action('wp_ajax_nopriv_send_order_to_telegram', 'send_order_to_telegram_callback');
 
