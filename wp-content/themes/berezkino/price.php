@@ -14,7 +14,10 @@ Template Name: Прайс листы
         </div>
 
         <div class="price__wrapper">
-            <a class="price__item" href="<?= wp_get_attachment_url(carbon_get_theme_option('price_fruit_berry')) ?>" download="">
+            <a
+                class="price__item <?= (!carbon_get_theme_option('price_fruit_berry')) ? 'price__item--blocked' : '' ?>"
+                href="<?= wp_get_attachment_url(carbon_get_theme_option('price_fruit_berry')) ?>" download="">
+
                 <p class="price__item-title">
                     Плодово-ягодные <br />
                     культуры
@@ -31,7 +34,10 @@ Template Name: Прайс листы
                     </p>
                 </div>
             </a>
-            <a class="price__item" href="<?= wp_get_attachment_url(carbon_get_theme_option('price_coniferous')) ?>" download="">
+
+            <a
+                class="price__item <?= (!carbon_get_theme_option('price_coniferous')) ? 'price__item--blocked' : '' ?>"
+                href="<?= wp_get_attachment_url(carbon_get_theme_option('price_coniferous')) ?>" download="">
                 <p class="price__item-title">
                     Хвойные <br />
                     Растения
@@ -48,7 +54,10 @@ Template Name: Прайс листы
                     </p>
                 </div>
             </a>
-            <a class="price__item" href="<?= wp_get_attachment_url(carbon_get_theme_option('price_ornamental_shrubs')) ?>" download="">
+
+            <a
+                class="price__item <?= (!carbon_get_theme_option('price_ornamental_shrubs')) ? 'price__item--blocked' : '' ?>"
+                href="<?= wp_get_attachment_url(carbon_get_theme_option('price_ornamental_shrubs')) ?>" download="">
                 <p class="price__item-title">
                     Декоративные <br />
                     кустарники
@@ -65,7 +74,10 @@ Template Name: Прайс листы
                     </p>
                 </div>
             </a>
-            <a class="price__item" href="<?= wp_get_attachment_url(carbon_get_theme_option('price_lianas')) ?>" download="">
+
+            <a
+                class="price__item <?= (!carbon_get_theme_option('price_lianas')) ? 'price__item--blocked' : '' ?>"
+                href="<?= wp_get_attachment_url(carbon_get_theme_option('price_lianas')) ?>" download="">
                 <p class="price__item-title">Лианы</p>
                 <div class="price__item-col">
                     <span>
@@ -79,7 +91,10 @@ Template Name: Прайс листы
                     </p>
                 </div>
             </a>
-            <a class="price__item" href="<?= wp_get_attachment_url(carbon_get_theme_option('price_ornamental_trees')) ?>" download="">
+
+            <a
+                class="price__item <?= (!carbon_get_theme_option('price_ornamental_trees')) ? 'price__item--blocked' : '' ?>"
+                href="<?= wp_get_attachment_url(carbon_get_theme_option('price_ornamental_trees')) ?>" download="">
                 <p class="price__item-title">
                     Декоративные <br />
                     деревья
@@ -96,7 +111,10 @@ Template Name: Прайс листы
                     </p>
                 </div>
             </a>
-            <a class="price__item" href="<?= wp_get_attachment_url(carbon_get_theme_option('price_full')) ?>" download="">
+
+            <a
+                class="price__item <?= (!carbon_get_theme_option('price_full')) ? 'price__item--blocked' : '' ?>"
+                href="<?= wp_get_attachment_url(carbon_get_theme_option('price_full')) ?>" download="">
                 <p class="price__item-title">
                     Полный прайс
                 </p>
