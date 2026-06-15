@@ -626,6 +626,7 @@ jQuery("#orderRequest").on("submit", function (e) {
   const sendOrderModal = document.getElementById("sendOrder");
   const successMessageModal = document.getElementById("successMessage");
   const errorMessageModal = document.getElementById("errorMessage");
+  const submitButton = document.getElementById("sendOrderButton");
   var form = jQuery(this);
   var $that = jQuery(this);
   var formData = new FormData($that[0]);
@@ -633,6 +634,9 @@ jQuery("#orderRequest").on("submit", function (e) {
 
   if (checkField.value != "") return false;
   if (!form.valid()) return false;
+
+  submitButton.setAttribute("disabled", "true");
+  submitButton.classList.add("await");
 
   jQuery.ajax({
     url: ajax.url,
@@ -643,6 +647,8 @@ jQuery("#orderRequest").on("submit", function (e) {
     success: function (response) {
       if (response.success) {
         sendOrderModal.close();
+        submitButton.removeAttribute("disabled", "true");
+        submitButton.classList.remove("await");
         successMessageModal.showModal();
         CartStorage.removeAll();
         updateCartBadge();
@@ -653,7 +659,6 @@ jQuery("#orderRequest").on("submit", function (e) {
     },
     error: function (jqXHR, textStatus, errorThrown) {
       errorMessageModal.showModal();
-      console.log(jqXHR, textStatus, errorThrown);
     },
   });
 });
@@ -665,6 +670,7 @@ jQuery("#reviewForm").on("submit", function (e) {
   const addReviewModal = document.getElementById("addReview");
   const successMessageModal = document.getElementById("successMessage");
   const errorMessageModal = document.getElementById("errorMessage");
+  const submitButton = document.getElementById("sendReviewButton");
   var form = jQuery(this);
   var $that = jQuery(this);
   var formData = new FormData($that[0]);
@@ -672,6 +678,9 @@ jQuery("#reviewForm").on("submit", function (e) {
 
   if (checkField.value != "") return false;
   if (!form.valid()) return false;
+
+  submitButton.setAttribute("disabled", "true");
+  submitButton.classList.add("await");
 
   jQuery.ajax({
     url: ajax.url,
@@ -682,16 +691,16 @@ jQuery("#reviewForm").on("submit", function (e) {
     success: function (response) {
       if (response.success) {
         addReviewModal.close();
+        submitButton.removeAttribute("disabled", "true");
+        submitButton.classList.remove("await");
         successMessageModal.showModal();
-        console.log(response);
+        form[0].reset();
       } else {
         errorMessageModal.showModal();
-        console.log(response);
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {
       errorMessageModal.showModal();
-      console.log(jqXHR, textStatus, errorThrown);
     },
   });
 });
