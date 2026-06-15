@@ -120,6 +120,27 @@ const deleteFromOrderToast = Toastify({
   },
 });
 
+const addToCartEmptyWarningToast = Toastify({
+  text: "Выберите вариант саженца для добавления в корзину",
+  duration: 3000,
+  close: true,
+  gravity: "bottom",
+  position: "left",
+  stopOnFocus: true,
+  style: {
+    padding: "15px 30px",
+    "padding-right": "20px",
+    display: "flex",
+    "column-gap": "5px",
+    "flex-direction": "row-reverse",
+    "justify-content": "center",
+    "border-radius": "12px",
+    background: "#FF9966",
+    "font-size": "18px",
+    "font-weight": 600,
+  },
+});
+
 // имитация closedby="any" для кроссбраузерности
 document.querySelectorAll("dialog").forEach((dialog) => {
   dialog.addEventListener("click", function (e) {
@@ -217,6 +238,11 @@ if (document.getElementById("addToOrder")) {
 
     if (!amountWarning && order.length > 0) {
       addToCartToast.showToast();
+    }
+
+    if (order.length == 0) {
+      addToCartEmptyWarningToast.showToast();
+      return;
     }
 
     order.forEach((item) => {
