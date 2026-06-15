@@ -57,7 +57,7 @@ git clone git@github.com:Olia-tsk/pitomnik-berezkino.git
 
 - [Cyr-To-Lat](https://ru.wordpress.org/plugins/cyr2lat/)
 - [WP Mail SMTP](https://ru.wordpress.org/plugins/wp-mail-smtp/)
-- [Permalink Manager Lite](https://ru.wordpress.org/plugins/permalink-manager/) (по желанию)
+- [Permalink Manager Lite](https://ru.wordpress.org/plugins/permalink-manager/)
 - [Carbon fields](https://docs.carbonfields.net/quickstart.html) (уже добавлен в тему и не требует установки через админ.панель)
 - Reviews Admin Table (уже добавлен в тему, необходимо активировать через админ.панель)
 
