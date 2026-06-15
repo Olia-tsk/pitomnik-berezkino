@@ -176,12 +176,10 @@ function getCatPosts($current_cat_id)
 add_action('admin_menu', 'remove_admin_menu');
 function remove_admin_menu()
 {
-    // скрываем пункт меню комментарии для всех
-    remove_menu_page('edit-comments.php');
     if (!current_user_can('manage_options')) {
-        // скрываем пункт меню инструмены и страницы для всех кроме админа
-        remove_menu_page('tools.php');
-        remove_menu_page('edit.php?post_type=page');
+        remove_menu_page('edit-comments.php');          #комментарии
+        remove_menu_page('tools.php');                  #инструменты
+        remove_menu_page('edit.php?post_type=page');    #создать страницу
     }
 }
 
